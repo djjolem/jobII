@@ -1,5 +1,7 @@
 <?php
 
+require_once ('confidential.php');
+
 return array(
 
 	/*
@@ -26,7 +28,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => DB_TYPE,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,10 +56,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => DB_HOST,
+			'database'  => DB_DATABASE,
+			'username'  => DB_USERNAME, 
+			'password'  => DB_PASSWORD,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
