@@ -1,5 +1,7 @@
 <?php
 
+include 'confidential.php';
+
 return array(
 
 	/*
@@ -13,7 +15,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
