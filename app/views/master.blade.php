@@ -11,8 +11,8 @@
 		@show
 	</title>
 
-	{{ HTML::style('bootstrap.css') }}
-	{{ HTML::style('bootstrap.min.css') }}
+	{{ HTML::style('css/bootstrap.css') }}
+	{{ HTML::style('css/bootstrap.min.css') }}
 
 	<style type="text/css">
 	@section('style')
@@ -50,8 +50,8 @@
 		</div>
 	</div>
 
-	{{ HTML::script('jquery-2.1.1.min.js') }}
-	{{ HTML::script('bootstrap.min.js') }}
-	{{ HTML::script('bootstrap.js') }}
+	{{ HTML::script('js/jquery-2.1.1.min.js') }}
+	{{ HTML::script('js/bootstrap.min.js') }}
+	{{ HTML::script('js/bootstrap.js') }}
 </body>
 </html>
