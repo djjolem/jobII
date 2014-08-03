@@ -1,26 +1,18 @@
-<?php //
-  // include 'dbConnect.php';
-  // $model = new DBConnection;
-?>
-
 <!-- content -->
 <div class="container center-block row">
   <div class="col-xs-1">&nbsp;</div>
 
   <div class="col-xs-10">
     <div class="accordion" id="accordion">
-      <?php //
-        // $ads = $model->getAds();
-        
-        // for ($i=0; $i<sizeof($ads); $i++){
-      ?>
+    
+      @foreach($ads as $ad) 
 
       <div class="thumbnails">
       <div class="thumbnail clearfix">
       <div class="row">
         <span class="col-xs-12">
-        <h3> &nbsp; <?php // //echo $ads[$i]['title']; ?> </h3>
-        <h4> &nbsp; <?php // // echo $ads[$i]['cname']; ?></h4>
+          <h3>{{ 'ad - title' }}</h3>
+          <h4>{{ 'ads - cmpny name' }}</h4>
         </span>
       </div>
       <div class="row">
@@ -31,21 +23,19 @@
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
                         href="  #collapse_<?php //   // echo $ads[$i]['job_id']; ?>">
-                            &nbsp; <?php // // echo $ads[$i]['ad_short']; ?>
+                    &nbsp; {{ 'ads - ad short' }}
                   </p>
 
                   <div id="collapse_<?php // echo $ads[$i]['job_id']; ?>" 
                       class="accordion-body collapse" style="height: 0px; ">
                     <div class="accordion-inner">
-                      <p>
-                        <?php // echo $ads[$i]['ad_text']; ?>
-                      </p>
+                      <p>{{ 'ads ad text' }}</p>
                       
-                      <div> &nbsp; </div>
-                      <div> &nbsp; </div>
+                      <div>&nbsp;</div>
+                      <div>&nbsp;</div>
 
                       <div>
-                        <small>Owner: <?php // echo $ads[$i]['owner'] ?></small>
+                        <small>Owner: {{ 'owner' }}</small>
                         <button type="button" class="btn btn-primary ">
                           Edit ...
                         </button>
@@ -68,7 +58,7 @@
                                 &times;
                               </button>
                               <h4 class="modal-title" id="myModalLabel_<?php // echo $i; ?>">
-                                Apply for <?php // echo $ads[$i]['title']; ?> at <?php // echo $ads[$i]['cname']; ?>
+                                Apply for {{ 'ad title'}} at {{ 'company name' }}
                               </h4>
                             </div>
                             
@@ -78,7 +68,7 @@
                                 <input type="file" id="exampleInputFile">
                                 <p class="help-block">
                                   <br>
-                                  <?php // echo $ads[$i]['ad_short']; ?>
+                                  {{ 'ad short' }}
                                 </p>
                               </div>
                               <div>
@@ -114,42 +104,37 @@
       </div>
       <div class="row">
         <div class="col-xs-10">
-          <?php //
-            //        $tags = $ads[$i]['tags'];
-              //      $atags = explode(',', $tags);
-                //    if (!(sizeof($atags) == 1 && $atags[0] == "")){
-                  //     for ($j=0; $j<sizeof($atags); $j++){
-                      ?>
-          <button type="button" class="btn btn-info"><?php // echo $atags[$j]; ?></button>
-          <?php //
-          //                 }
-          //            }
-                    ?>
+
+          {{-- TODO: set corect tags --}}
+          <?php $tags = array('CSS', 'HTML', 'Laravel'); ?>
+          @if (sizeof($tags) > 0)
+            @foreach ($tags as $tag)
+              <button type="button" class="btn btn-info">{{ $tag }}</button>
+            @endforeach
+          @endif
+
           <button type="button" class="btn btn-info pull-right">Location</button>
         </div>
         <div class="col-xs-2">
-          <?php //
-          //                 $deadline = date($ads[$i]['deadline']);
-          //              $oneweek = date('Y-m-d', strtotime("+1 week"));
-                    ?>
-
           <h4>
-          <?php 
-            // if ($oneweek >= $deadline){
-            // echo "<span class='label label-danger'> {$ads[$i]['deadline']} </span>";
-            // } else {
-            // echo "<span class='label label-default'> {$ads[$i]['deadline']}</span>";
-            // }
-          ?>
+            {{-- TODO: deadline change if condition --}}
+            {{-- $deadline = date($ads[$i]['deadline']) --}}
+            {{-- $oneweek = date('Y-m-d', strtotime("+1 week")) --}}
+            {{-- if($deadline < $oneweek) --}}
+            @if (true)
+              <span class='label label-danger'>{{ '2014-08-30' }}</span>
+            @else
+              <span class='label label-default'>{{ '2014-08-30' }}</span>
+            @endif
           </h4>
         </div>
       </div>
       </div>
       </div>
 
-      <?php // //} ?>
+      @endforeach
 
     </div>
-  </div> <!-- class="col-xs-10" -->
+  </div><!-- class="col-xs-10" -->
   <div class="col-xs-1">&nbsp;</div>
 </div><!-- content" -->
