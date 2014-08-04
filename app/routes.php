@@ -11,8 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
 //
+Route::get('/', 'HomeController@home');
+
+//
+Route::get('/newad', function() {
+  echo '<a href="/">Go to home</a>';
+});
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

@@ -21,7 +21,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="newad.php"><strong>New Ad</strong></a></li>
+      <li><a href="newad"><strong>New Ad</strong></a></li>
         <?php 
           $signedIn = isset($_SESSION['signedin']) && $_SESSION['signedin'];
           if ($signedIn){
@@ -39,7 +39,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#"  onclick="submitForm('user_signout');">Sign out</a>
+              <a href="#" onclick="submitForm('user_signout');">Sign out</a>
             </li>
           </ul>  
         </li>

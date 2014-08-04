@@ -27,14 +27,13 @@ class HomeController extends BaseController {
 	*/
 	public function home() {
 		$ads = array(
-			'a' => 'a',
-			'b' => 'b',
+			'a' => 'a',		
 		);
 		$data = array(
 			'thisIsTest' => 'Successfully tested',
 			'ads' => $ads,
 		);
-		
+
 		return View::make('home', $data);
 	}
 
