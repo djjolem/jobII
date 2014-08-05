@@ -28,7 +28,7 @@ class HomeController extends BaseController {
 	*/
 	public function home() {
 		$adsModel = new Ad;
-		$adsList = $adsModel->getAllAds();
+		$adsList = $adsModel->getAllAds()->toArray();
 
 		$data = array(
 			'ads' => $adsList,
