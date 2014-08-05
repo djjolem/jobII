@@ -5,6 +5,7 @@
   <div class="col-xs-10">
     <div class="accordion" id="accordion">
     
+      <?php var_dump($ads); ?>
       @foreach($ads as $ad) 
 
       <div class="thumbnails">
@@ -22,7 +23,7 @@
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
-                        href="  #collapse_<?php //   // echo $ads[$i]['job_id']; ?>">
+                        href="  #collapse_<?php // echo $ads[$i]['job_id']; ?>">
                     &nbsp; {{ 'ads - ad short' }}
                   </p>
 
@@ -45,8 +46,7 @@
                         </button>
                         &nbsp;
                       </div>
-
-                      <!-- Modal -->
+                        <!-- Modal -->
                       <div class="modal fade" id="myModal_<?php // echo $i; ?>" tabindex="-1" 
                           role="dialog" aria-labelledby="myModalLabel_<?php // echo $i; ?>" 
                           aria-hidden="true">

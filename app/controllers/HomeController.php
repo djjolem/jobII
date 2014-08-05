@@ -21,17 +21,17 @@ class HomeController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Home controller  
+	| Home controller
+	| List all ads 
 	|--------------------------------------------------------------------------
 	|
 	*/
 	public function home() {
-		$ads = array(
-			'a' => 'a',		
-		);
+		$adsModel = new Ad;
+		$adsList = $adsModel->getAllAds();
+
 		$data = array(
-			'thisIsTest' => 'Successfully tested',
-			'ads' => $ads,
+			'ads' => $adsList,
 		);
 
 		return View::make('home', $data);
