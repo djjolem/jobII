@@ -37,4 +37,9 @@ class HomeController extends BaseController {
 		return View::make('home', $data);
 	}
 
+	public function newad() {
+
+		return View::make('newad');
+	}
+
 }
