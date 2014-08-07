@@ -1,3 +1,5 @@
+@section('content')
+
 <!-- content -->
 <div class="container center-block row">
   <div class="col-xs-1">&nbsp;</div>
@@ -144,3 +146,5 @@
   </div><!-- class="col-xs-10" -->
   <div class="col-xs-1">&nbsp;</div>
 </div><!-- content" -->
+
+@stop

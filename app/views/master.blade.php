@@ -31,15 +31,15 @@
 			<div>
 
 			<div class=".col-xs-6 .col-md-4">
-				<div>
+				<div id="top_menu">
 				@yield('menu')
 				</div>
 
-				<div>
+				<div id="center_content">
 				@yield('content')
 				</div>
 
-				<div>
+				<div id="footer">
 				@yield('footer')
 				</div>
 			</div>

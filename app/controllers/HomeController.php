@@ -39,7 +39,8 @@ class HomeController extends BaseController {
 
 	public function newad() {
 
-		return View::make('newad');
+		$user = array('user', 'djm');
+		return View::make('newad', $user);
 	}
 
 }
