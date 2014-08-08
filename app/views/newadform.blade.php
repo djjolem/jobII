@@ -6,7 +6,7 @@
 		<div class="col-xs-2">&nbsp;</div>
 
 		<div class="col-xs-8">
-	
+
 			@if (!isset($user))
 			<div>
 				If you are not registerd user then ... 
@@ -15,7 +15,7 @@
 
 			<form class="form-horizontal" role="form" id="new_ad" name="new_ad" 
 				action="savead.php" method="post">
-				<h2> New ad </h2> <?php // echo $_SESSION['user_name']; ?>
+				<h2>Add a new ad</h2> <?php // echo $_SESSION['user_name']; ?>
 				<input name="user" value="0" />
 				<?php // if (isset($_SESSION['user_id'])){ ?>
 				<input type="hidden" name="user_id" value="<?php //  echo $_SESSION['user_id']; ?>" />
