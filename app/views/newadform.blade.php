@@ -9,12 +9,12 @@
 
 			@if (!isset($user))
 			<div>
-				If you are not registerd user then ... 
+				<p class="bg-success">If you are not registerd user then ...</p>
 			</div>
 			@endif
 
 			<form class="form-horizontal" role="form" id="new_ad" name="new_ad" 
-				action="savead.php" method="post">
+				action="savead" method="post">
 				<h2>Add a new ad</h2> <?php // echo $_SESSION['user_name']; ?>
 				<input name="user" value="0" />
 				<?php // if (isset($_SESSION['user_id'])){ ?>

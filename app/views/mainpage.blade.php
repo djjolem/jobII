@@ -5,8 +5,20 @@
   <div class="col-xs-1">&nbsp;</div>
 
   <div class="col-xs-10">
+
+    @if(isset($err) && $err != null)
+    <div>
+      <p class="bg-danger">{{ $err }}</p>
+    </div>
+    @endif
+
+    @if(isset($msg) && $msg != null)
+    <div>
+      <p class="bg-info">{{ $msg }}</p>
+    </div>
+    @endif
+
     <div class="accordion" id="accordion">
-    
       @foreach($ads as $ad) 
       <?php $i = 0; ?>
     
@@ -144,6 +156,7 @@
 
     </div>
   </div><!-- class="col-xs-10" -->
+
   <div class="col-xs-1">&nbsp;</div>
 </div><!-- content" -->
 

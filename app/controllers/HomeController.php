@@ -26,21 +26,45 @@ class HomeController extends BaseController {
 	|--------------------------------------------------------------------------
 	|
 	*/
-	public function home() {
+	public function home($message = null) {
 		$adsModel = new Ad;
 		$adsList = $adsModel->getAllAds()->toArray();
 
 		$data = array(
 			'ads' => $adsList,
+			'msg' => $message,
 		);
 
 		return View::make('home', $data);
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| Shows form to add new ad
+	|--------------------------------------------------------------------------
+	|
+	*/
 	public function newad() {
 
+		// TODO: find user
 		$user = array('user', 'djm');
 		return View::make('newad', $user);
+	}
+
+/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function savead() {
+		//  var_dump($_POST); 
+
+		$message = 'Saved new ad';
+
+		return $this->home($message); 
 	}
 
 }
