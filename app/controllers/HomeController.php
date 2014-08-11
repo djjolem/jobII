@@ -60,10 +60,10 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function savead() {
-		//  var_dump($_POST); 
+		$adsModel = new Ad; 
 
-		$message = 'Saved new ad';
-
+		$message = $adsModel->savead();
+		
 		return $this->home($message); 
 	}
 
