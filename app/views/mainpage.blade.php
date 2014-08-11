@@ -29,6 +29,7 @@
           <h4>{{ $ad['fk_company'] . '<-- get company name' }}</h4>
         </span>
       </div>
+      
       <div class="row">
         <span class="col-xs-10">
           <div class="well">

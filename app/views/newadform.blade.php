@@ -8,8 +8,8 @@
 		<div class="col-xs-8">
 
 			@if (!isset($user))
-			<div>
-				<p class="bg-success">If you are not registerd user then ...</p>
+			<div class="well">
+				<p>Shoul I create an account?</p>
 			</div>
 			@endif
 
@@ -73,6 +73,7 @@
 				<div> &nbsp; </div>
 				<label class="control-lablel"> Deadline </label>
 				<br>
+
 				<div class="well">
 					<div class="form-group">
 						<div class="input-group date">
