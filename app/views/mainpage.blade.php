@@ -20,7 +20,6 @@
 
     <div class="accordion" id="accordion">
       @foreach($ads as $ad) 
-      <?php $i = 0; ?>
     
       <div class="thumbnails">
       <div class="thumbnail clearfix">
@@ -37,11 +36,11 @@
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
-                        href="  #collapse_<?php $ad['id']; ?>">
+                        href="  #collapse_{{ $ad['id'] }}">
                     &nbsp; {{ $ad['short'] }}
                   </p>
 
-                  <div id="collapse_<?php $ad['id']; ?>" 
+                  <div id="collapse_{{ $ad['id'] }}" 
                       class="accordion-body collapse" style="height: 0px; ">
                     <div class="accordion-inner">
                       <p>{{ $ad['ad_text'] }}</p>
@@ -55,15 +54,15 @@
                           Edit ...
                         </button>
                         <button type="button" class="btn btn-primary pull-right"
-                              data-toggle="modal" data-target="#myModal_<?php echo $i; ?>">
+                              data-toggle="modal" data-target="#myModal_{{ $ad['id'] }}">
                           Apply
                         </button>
                         &nbsp;
                       </div>
                       
                       <!-- Modal -->
-                      <div class="modal fade" id="myModal_<?php echo $i; ?>" tabindex="-1" 
-                          role="dialog" aria-labelledby="myModalLabel_<?php echo $i; ?>" 
+                      <div class="modal fade" id="myModal_{{ $ad['id'] }}" tabindex="-1" 
+                          role="dialog" aria-labelledby="myModalLabel_{{ $ad['id'] }}" 
                           aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
@@ -72,7 +71,7 @@
                                 aria-hidden="true">
                                 &times;
                               </button>
-                              <h4 class="modal-title" id="myModalLabel_<?php echo $i; ?>">
+                              <h4 class="modal-title" id="myModalLabel_{{ $ad['id'] }}">
                                 Apply for {{ $ad['title'] }} at {{ $ad['fk_company'] }}
                               </h4>
                             </div>
@@ -151,7 +150,6 @@
       </div>
       </div>
 
-      <?php $i = $i + 1; ?>
       @endforeach
 
     </div>
