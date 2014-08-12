@@ -7,7 +7,7 @@
 
 		<div class="col-xs-8">
 
-			@if (!isset($user))
+			@if (!isset($userId) || $userId == 0)
 			<div class="well">
 				<p>Shoul I create an account?</p>
 			</div>
@@ -25,22 +25,17 @@
 			}}
 				<h2>Add a new ad</h2>
 				
-				<input name="user" value="0" />
-				
-
-				<input type="hidden" name="user_id" value="<?php echo 0; // user id  ?>" />
-				
-				<input type="hidden" name="user_id" value="0" />
-
+				<input type="hidden" name="user_id" value="{{ $userId }}" />
 				<div> &nbsp; </div>
 
 				{{ Form::label('company', 'Company') }}
 				<select id="company" name="company" class="form-control">
 					<option value="0"> Choose company </option>
-					<?php /* 
+					<?php 
+					/*
 					$companies = $model->getCompanies();
 					for ($i=0; $i<sizeof($companies); $i++){
-						*/
+					*/
 					?>
 					<option value="<?php //  echo ($i+1); ?>"> 
 						Company <?php // echo $companies[$i]; ?>
@@ -72,18 +67,18 @@
 				<?php /*
 				   $tags = $model->getTags();
 				   for($i=0; $i<sizeof($tags); $i++){
-				   */?>
+				   */
+				?>
+
 				<label class="checkbox-inline">
 					<input type="checkbox" id="cb_tag" name="cb_tag[]" 
 						value="<?php // echo $tags[$i]['tag_id']; ?>" />
 						<?php // echo $tags[$i]['tname']; ?>
 				</label>
 				<?php // } ?>
-
 				<div> &nbsp; </div>
-				<label class="control-lablel"> Deadline </label>
-				<br>
 
+				{{ Form::label('deadline', 'Deadline', array('class' => 'control-lablel')) }}
 				<div class="well">
 					<div class="form-group">
 						<div class="input-group date">

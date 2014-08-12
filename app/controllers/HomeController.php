@@ -48,8 +48,14 @@ class HomeController extends BaseController {
 	public function newad() {
 
 		// TODO: find user
+		// TODO: Use session - and from there get user id 
 		$user = array('user', 'djm');
-		return View::make('newad', $user);
+
+		// if userId == 0 =then==> $userId = $USER_ID_DEFAULT;
+		$userId = 0; 
+		$data = array('userId' => $userId); 
+
+		return View::make('newad', $data);
 	}
 
 /*
@@ -63,7 +69,7 @@ class HomeController extends BaseController {
 		$adsModel = new Ad; 
 
 		$message = $adsModel->savead();
-		
+
 		return $this->home($message); 
 	}
 
