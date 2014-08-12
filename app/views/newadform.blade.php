@@ -13,18 +13,28 @@
 			</div>
 			@endif
 
-			<form class="form-horizontal" role="form" id="new_ad" name="new_ad" 
-				action="savead" method="post">
-				<h2>Add a new ad</h2> <?php // echo $_SESSION['user_name']; ?>
+			{{ Form::open(array(
+					'url' => 'savead',
+					'method' => 'POST',
+					'name' => 'new_ad',
+					'id' => 'new_ad',
+					'class' => 'form-horizontal',
+					'role' => 'form',
+					)
+				) 
+			}}
+				<h2>Add a new ad</h2>
+				
 				<input name="user" value="0" />
-				<?php // if (isset($_SESSION['user_id'])){ ?>
-				<input type="hidden" name="user_id" value="<?php //  echo $_SESSION['user_id']; ?>" />
-				<?php // } else {?>
+				
+
+				<input type="hidden" name="user_id" value="<?php echo 0; // user id  ?>" />
+				
 				<input type="hidden" name="user_id" value="0" />
-				<?php // } ?>
+
 				<div> &nbsp; </div>
 
-				<label>Company</label>
+				{{ Form::label('company', 'Company') }}
 				<select id="company" name="company" class="form-control">
 					<option value="0"> Choose company </option>
 					<?php /* 
@@ -39,18 +49,18 @@
 				</select>
 				<div> &nbsp; </div>
 
-				<label> Title </label>
+				{{ Form::label('ad_title', 'Title') }}
 				<input type="text" class="form-control" placeholder="Ad Title" id="ad_title" 
 					name="ad_title" />
 				<div> &nbsp; </div>
 
-				<label> Short text </label>
+				{{ Form::label('ad_description', 'Short text') }}
 				<textarea class="form-control" rows="3" placeholder="Short description" 
 					id="ad_description" name="ad_description">
 				</textarea>
 				<div> &nbsp; </div>
 
-				<label> Ad text </label>
+				{{ Form::label('ad_text', 'Ad text') }}
 				<textarea class="form-control" rows="10" placeholder="Text of ad" 
 					id="ad_text" name="ad_text">
 				</textarea>
@@ -58,7 +68,7 @@
 
 
 				<!--- <div class="form-group">-->
-				<label> Tags </label><br>
+				{{ Form::label('tags', 'Tags') }}
 				<?php /*
 				   $tags = $model->getTags();
 				   for($i=0; $i<sizeof($tags); $i++){
@@ -88,13 +98,15 @@
 				<div> &nbsp; </div>
 
 				<div>
-					<label> Location </label><br>
+					{{ Form::label('Location') }}
+					<br>
 					Location - make list of locations
 				</div>
 				<div> &nbsp; </div>
 
 				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
+
+			{{ Form::close() }}
 		</div>
 	</div>
 

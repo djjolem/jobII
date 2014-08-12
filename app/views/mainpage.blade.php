@@ -26,7 +26,7 @@
       <div class="row">
         <span class="col-xs-12">
           <h3>{{ $ad['title'] }}</h3>
-          <h4>{{ $ad['fk_company'] . '<-- get company name' }}</h4>
+          <h4>{{ $ad['fk_company'] . '-- get company name' }}</h4>
         </span>
       </div>
       
@@ -50,8 +50,8 @@
                       <div>&nbsp;</div>
 
                       <div>
-                        <small>Owner: {{ $ad['fk_user'] . '<-- username' }}</small>
-                        <button type="button" class="btn btn-primary ">
+                        <small>Owner: {{ $ad['fk_user'] . '-- username' }}</small>
+                        <button type="button" class="btn btn-primary">
                           Edit ...
                         </button>
                         <button type="button" class="btn btn-primary pull-right"
