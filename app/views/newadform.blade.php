@@ -10,6 +10,8 @@
 			@if (!isset($userId) || $userId == 0)
 			<div class="well">
 				<p>Shoul I create an account?</p>
+				<p>Button ??</p>
+				<p>Button New account</p>
 			</div>
 			@endif
 
@@ -29,36 +31,25 @@
 				<div> &nbsp; </div>
 
 				{{ Form::label('company', 'Company') }}
-				<select id="company" name="company" class="form-control">
-					<option value="0"> Choose company </option>
-					<?php 
-					/*
-					$companies = $model->getCompanies();
-					for ($i=0; $i<sizeof($companies); $i++){
-					*/
-					?>
-					<option value="<?php //  echo ($i+1); ?>"> 
-						Company <?php // echo $companies[$i]; ?>
-					</option>
-					<?php //  } ?>
-				</select>
+				{{ Form::select('company', $companies, null, array('class' => 'form-control')) }}
 				<div> &nbsp; </div>
 
 				{{ Form::label('ad_title', 'Title') }}
-				<input type="text" class="form-control" placeholder="Ad Title" id="ad_title" 
-					name="ad_title" />
+				{{ Form::text('ad_title', null, 
+						array('class' => 'form-control', 'placeholder' => 'Ad title')) 
+				}}
 				<div> &nbsp; </div>
 
 				{{ Form::label('ad_description', 'Short text') }}
-				<textarea class="form-control" rows="3" placeholder="Short description" 
-					id="ad_description" name="ad_description">
-				</textarea>
+				{{ Form::textarea('ad_description', null, 
+						array('class' => 'form-control', 'placeholder' => 'Short description', 'rows' => '3'))
+				}}
 				<div> &nbsp; </div>
 
 				{{ Form::label('ad_text', 'Ad text') }}
-				<textarea class="form-control" rows="10" placeholder="Text of ad" 
-					id="ad_text" name="ad_text">
-				</textarea>
+				{{ Form::textarea('ad_text', null, 
+						array('class' => 'form-control', 'placeholder' => 'Text of ad', 'rows' => '10' )) 
+				}}
 				<div> &nbsp; </div>
 
 
@@ -70,11 +61,11 @@
 				   */
 				?>
 
-				<label class="checkbox-inline">
+				<label class="checkbox-inline"></label>
 					<input type="checkbox" id="cb_tag" name="cb_tag[]" 
 						value="<?php // echo $tags[$i]['tag_id']; ?>" />
 						<?php // echo $tags[$i]['tname']; ?>
-				</label>
+				
 				<?php // } ?>
 				<div> &nbsp; </div>
 
@@ -99,7 +90,7 @@
 				</div>
 				<div> &nbsp; </div>
 
-				<button type="submit" class="btn btn-primary">Submit</button>
+				{{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 
 			{{ Form::close() }}
 		</div>
@@ -107,7 +98,6 @@
 
 	<div class="col-xs-2">&nbsp;</div>
 </div>
-
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>

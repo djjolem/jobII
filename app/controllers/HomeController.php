@@ -53,7 +53,10 @@ class HomeController extends BaseController {
 
 		// if userId == 0 =then==> $userId = $USER_ID_DEFAULT;
 		$userId = 0; 
-		$data = array('userId' => $userId); 
+
+		// TODO: get companies, and their IDs
+		$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
+		$data = array('userId' => $userId, 'companies' => $companies); 
 
 		return View::make('newad', $data);
 	}
