@@ -56,7 +56,15 @@ class HomeController extends BaseController {
 
 		// TODO: get companies, and their IDs
 		$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
-		$data = array('userId' => $userId, 'companies' => $companies); 
+
+		// TODO: get tags from database
+		$tags = array(1 => 'HTML', 2 => 'CSS', 3 => 'PHP', 4 => 'Laravel');
+		
+		$data = array(
+			'userId' => $userId, 
+			'companies' => $companies, 
+			'tags' => $tags, 
+		); 
 
 		return View::make('newad', $data);
 	}

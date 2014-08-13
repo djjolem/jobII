@@ -27,7 +27,11 @@
 			}}
 				<h2>Add a new ad</h2>
 				
-				<input type="hidden" name="user_id" value="{{ $userId }}" />
+				<!-- 
+					TODO: is this hidden field necessary 
+					User id is posible take from session ???
+				 -->
+				{{ Form::hidden('user_id', $userId) }}
 				<div> &nbsp; </div>
 
 				{{ Form::label('company', 'Company') }}
@@ -52,21 +56,14 @@
 				}}
 				<div> &nbsp; </div>
 
-
-				<!--- <div class="form-group">-->
-				{{ Form::label('tags', 'Tags') }}
-				<?php /*
-				   $tags = $model->getTags();
-				   for($i=0; $i<sizeof($tags); $i++){
-				   */
-				?>
-
-				<label class="checkbox-inline"></label>
-					<input type="checkbox" id="cb_tag" name="cb_tag[]" 
-						value="<?php // echo $tags[$i]['tag_id']; ?>" />
-						<?php // echo $tags[$i]['tname']; ?>
-				
-				<?php // } ?>
+				{{ Form::label('cb_tag[]', 'Tags') }}
+				<br />
+				<span id="tags_groupde">
+					@foreach ($tags as $tagId => $tagName)
+						{{ Form::checkbox('cb_tag[]', $tagName) }}
+						{{ Form::label('', $tagName) }}
+					@endforeach
+				</span>
 				<div> &nbsp; </div>
 
 				{{ Form::label('deadline', 'Deadline', array('class' => 'control-lablel')) }}
