@@ -1,7 +1,7 @@
 <?php 
 
 Form::macro('date', function($nameAndId, $default = null, $attrs = array()) {
-	$item = '<input type="date" nameAndId="' . $nameAndId . '"' ;
+	$item = '<input type="date" name="' . $nameAndId . '"' ;
 	$item .= ' id="' . $nameAndId . '"'; 
 	 
 	if ($default) {
