@@ -88,6 +88,8 @@
 
 				{{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 
+				{{ Form::reset('Clear', array('class' => 'btn btn-info')) }}
+
 			{{ Form::close() }}
 		</div>
 	</div>
