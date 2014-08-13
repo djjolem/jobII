@@ -51,7 +51,6 @@
 	</div>
 
 	{{ HTML::script('js/jquery-2.1.1.min.js') }}
-	{{ HTML::script('js/bootstrap.min.js') }}
 	{{ HTML::script('js/bootstrap.js') }}
 </body>
 </html>

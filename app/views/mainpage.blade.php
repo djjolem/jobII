@@ -37,7 +37,7 @@
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
-                        href="  #collapse_{{ $ad['id'] }}">
+                        href="#collapse_{{ $ad['id'] }}">
                     &nbsp; {{ $ad['short'] }}
                   </p>
 
@@ -62,7 +62,8 @@
                       </div>
                       
                       <!-- Modal -->
-                      <div class="modal fade" id="myModal_{{ $ad['id'] }}" tabindex="-1" 
+                      <div class="modal fade" id="myModal_{{ $ad['id'] }}" 
+                          name="myModal_{{ $ad['id'] }}" tabindex="-1" 
                           role="dialog" aria-labelledby="myModalLabel_{{ $ad['id'] }}" 
                           aria-hidden="true">
                         <div class="modal-dialog">
@@ -105,6 +106,8 @@
                           </div>
                         </div>
                       </div>
+                      <!-- modal end --> 
+
                     </div>
                   </div>
                 </div>

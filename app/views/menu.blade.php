@@ -19,7 +19,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class=""><a href="index.php"><strong>List Ads</strong></a></li>
+      <li class=""><a href="/"><strong>List Ads</strong></a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
@@ -233,11 +233,9 @@
 </form>
 
 <script type="text/javascript">
-
-  var submitForm = function(formName){
-    document.getElementById(formName).submit();
-  }
-
+var submitForm = function(formName){
+  document.getElementById(formName).submit();
+}
 </script>
 
 @stop
