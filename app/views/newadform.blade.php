@@ -67,15 +67,14 @@
 				<div> &nbsp; </div>
 
 				{{ Form::label('deadline', 'Deadline', array('class' => 'control-lablel')) }}
-				<div class="well">
-					<div class="form-group">
-						<div class="input-group date">
-							<input class="form-control" type="text" data-format="yyyy-MM-dd" 
-								id="deadline" name="deadline" />
-							<span class="input-group-addon">
-								<i class="glyphicon glyphicon-calendar"></i>
-							</span>
-						</div>
+				<div class="well form-group">
+					<div class="input-group date">
+						{{ Form::date('deadline', null, 
+								array('class' => 'form-control', 'data-format' => 'yyyy-mm-dd' )) 
+						}}
+						<span class="input-group-addon">
+							<i class="glyphicon glyphicon-calendar"></i>
+						</span>
 					</div>
 				</div>
 				<div> &nbsp; </div>
