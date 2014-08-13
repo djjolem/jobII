@@ -12,7 +12,7 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#">
-      ShList 
+      jobIT
     </a>
   </div>
 
