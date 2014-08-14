@@ -86,7 +86,7 @@
           
           
           <div class="tab-pane fade active in" id="signin">  
-            <form class="form-horizontal" role="from" id="sign_in" name="sign_in" action="signinup.php" method="post">
+            <form class="form-horizontal" role="from" id="sign_in" name="sign_in" action="signinup" method="post">
               <fieldset>
                 <!-- Sign In Form -->
                 <!-- Text input-->
@@ -126,7 +126,7 @@
           </div>
 
           <div class="tab-pane fade" id="signup">
-            <form class="form-horizontal" role="form" id="new_user" name="new_user" action="signinup.php" method="post">
+            <form class="form-horizontal" role="form" id="new_user" name="new_user" action="signinup" method="post">
               <fieldset>
                 <!-- Sign Up Form -->
                 <!-- Text input-->
@@ -225,10 +225,11 @@
   </div>
 </div>
 
-<form class="form-horizontal" role="form" id="user_settings" name="user_settings" action="settings.php" method="post">
+<form class="form-horizontal" role="form" id="user_settings" name="user_settings" action="settings" method="post">
   <input type="hidden" name="settings" value="settings"/>
 </form>
-<form class="form-horizontal" role="form" id="user_signout" name="user_signout" action="signinup.php" method="post">
+
+<form class="form-horizontal" role="form" id="user_signout" name="user_signout" action="signinup" method="post">
   <input type="hidden" name="signout" value="signout" />
 </form>
 

@@ -84,4 +84,17 @@ class HomeController extends BaseController {
 		return $this->home($message); 
 	}
 
-}
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function signinup() {
+		$message = 'Make sign in/sign up';
+
+		return $this->home($message);
+	}
+
+} // class end
