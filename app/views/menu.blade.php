@@ -24,14 +24,13 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="newad"><strong>New Ad</strong></a></li>
-        <?php 
-          $signedIn = isset($_SESSION['signedin']) && $_SESSION['signedin'];
-          if ($signedIn){
-        ?>
         
+        <?php $signedIn = isset($_SESSION['signedin']) && $_SESSION['signedin']; ?>
+        @if ($signedIn)
         <li class="dropdown">
           <a data-toggle="dropdown"> 
-            <?php echo $_SESSION['user_name']; ?> &nbsp;
+            {{ $_SESSION['user_name'] }}
+             &nbsp;
             <img class="pull-right img-responsive img-circle" src="http://placehold.it/32x32" alt="User" />
           </a>
           
@@ -45,22 +44,20 @@
             </li>
           </ul>  
         </li>
-
-      <?php
-        } else {
-      ?>
-      <li class="dropdown">
-        <a class="btn btn-default btn-block" href="#signin" data-toggle="modal" data-target="#myModalMenu">
-          Sign In/Sign up
-        </a>
-      </li>
-      <?php } ?>
+        @else 
+        <li class="dropdown">
+          <a class="btn btn-default btn-block" href="#signin" data-toggle="modal" 
+              data-target="#myModalMenu">
+            Sign In
+            Sign up
+          </a>
+        </li>
+        @endif
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
 
-<div class="">&nbsp;</div>
 <div class="">&nbsp;</div>
 <div class="">&nbsp;</div>
 <div class="">&nbsp;</div>
@@ -225,13 +222,21 @@
   </div>
 </div>
 
-<form class="form-horizontal" role="form" id="user_settings" name="user_settings" action="settings" method="post">
-  <input type="hidden" name="settings" value="settings"/>
-</form>
+{{ Form::open(array(
+      'url' => 'settings', 'method' => 'POST', 'name' => 'user_settings',
+      'id' => 'user_settings', 'class' => 'form-horizontal', 'role' => 'form',
+  )) 
+}}
+  {{ Form::hidden('settings', 'settings') }}
+{{ Form::close() }}
 
-<form class="form-horizontal" role="form" id="user_signout" name="user_signout" action="signinup" method="post">
-  <input type="hidden" name="signout" value="signout" />
-</form>
+{{ Form::open(array(
+      'url' => 'signinup', 'method' => 'POST', 'name' => 'signinup', 
+      'id' => 'signinup', 'class' => 'form-horizontal', 'role' => 'form',
+  ))
+}}
+  {{ Form::hidden('signout', 'signout') }}
+{{ Form::close() }}
 
 <script type="text/javascript">
 var submitForm = function(formName){
