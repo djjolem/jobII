@@ -65,7 +65,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade bs-modal-sm" id="myModalMenu" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade bs-modal-sm" id="myModalMenu" tabindex="-1" 
+    role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <br>
@@ -81,32 +82,34 @@
       <div class="modal-body">
         <div id="myTabContent" class="tab-content">
           
-          
+          <!-- ************ --> 
+          <!-- Sign In Form -->
           <div class="tab-pane fade active in" id="signin">
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'sign_in', 'id' => 'sign_in', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
-                <!-- Sign In Form -->
-                <!-- Text input-->
                 <div class="control-group">
                   {{ Form::label('userid', 'Alias', array('calss' => 'control-label')) }}
                   <div class="controls">
-                    <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="Username or email" class="input-medium" required="">
+                    {{ Form::text('userid', null, array('class' => 'form-control input-medium', 'placeholder' => 'Username or email', 'required' => '')) }}
                   </div>
                 </div>
                 <!-- Password input-->
                 <div class="control-group">
                 {{ Form::label('passwordinput', 'Password', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+                    {{ Form::password('passwordinput', array(
+                        'class' => 'form-control input-medium', 
+                        'placeholder' => '*********', 'required' => ''
+                      )) 
+                    }}
                   </div>
                 </div>
 
                 <!-- Multiple Checkboxes (inline) -->
                 <div class="control-group">
                   <div class="controls">
+                    {{ Form::checkbox('rememberme', null, array('value' => 'Remember me')) }}
                     {{ Form::label('rememberme-0', 'Remember me', array('class' => 'checkbox inline')) }}
-                      <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
-                        Remember me
                   </div>
                 </div>
                 <!-- Button -->
@@ -131,15 +134,15 @@
                 <div class="control-group">
                   {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input id="email" name="email" class="form-control" type="text" placeholder="Email" class="input-large" required="">
+                    {{ Form::email('email', null, array('class' => 'form-control input-large', 'placeholder' => 'Email', 'required' => '')) }}
                   </div>
                 </div>
                 
                 <!-- Text input-->
                 <div class="control-group">
                   {{ Form::label('userid', 'Alias', array('class' => 'control-label')) }}
-                  <div class="controls"> 
-                    <input id="userid" name="userid" class="form-control" type="text" placeholder="Username" class="input-large" required="">
+                  <div class="controls">
+                    {{ Form::text('userid', null, array('class' => 'form-control input-large', 'placeholder' => 'Username', 'required' => '')) }}
                   </div>
                 </div>
                 
@@ -147,7 +150,7 @@
                 <div class="control-group">
                   {{ Form::label('password', 'Password', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                    {{ Form::password('password', array('class' => 'form-control input-large', 'placeholder' => '**********', 'required' => '')) }}
                       <small><em>1-8 Characters</em></small>
                   </div>
                 </div>
@@ -156,7 +159,7 @@
                 <div class="control-group">
                   {{ Form::label('reenterpassword', 'Confirm password', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                    {{ Form::password('reenterpassword', array('class' => 'form-control input-large', 'placeholder' => '*********', 'required' => '' )) }}
                   </div>
                 </div>
                     
@@ -178,7 +181,7 @@
                 <div class="control-group">
                   {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input id="email" name="email" class="form-control" type="text" placeholder="Email" class="input-large" required="">
+                    {{ Form::email('email', null, array('class' => 'form-control input-large', 'placeholder' => 'Email', 'required' => '')) }}
                   </div>
                 </div>
 
@@ -190,7 +193,7 @@
                 <div class="control-group">
                   {{ Form::label('alias', 'Alias', array('class' => 'control-label')) }}
                   <div class="controls">
-                    <input id="alias" name="alias" class="form-control" type="text" placeholder="Alias" class="input-large" required="">
+                    {{ Form::text('alias', null, array('class' => 'form-control input-large', 'placeholder' => 'Alias', 'required' => '')) }}
                   </div>
                 </div>
 
