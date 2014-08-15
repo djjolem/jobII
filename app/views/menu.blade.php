@@ -82,20 +82,20 @@
         <div id="myTabContent" class="tab-content">
           
           
-          <div class="tab-pane fade active in" id="signin">  
-            <form class="form-horizontal" role="from" id="sign_in" name="sign_in" action="signinup" method="post">
+          <div class="tab-pane fade active in" id="signin">
+            {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'sign_in', 'id' => 'sign_in', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
                 <!-- Sign In Form -->
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="userid">Alias</label>
+                  {{ Form::label('userid', 'Alias', array('calss' => 'control-label')) }}
                   <div class="controls">
                     <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="Username or email" class="input-medium" required="">
                   </div>
                 </div>
                 <!-- Password input-->
                 <div class="control-group">
-                  <label class="control-label" for="passwordinput">Password</label>
+                {{ Form::label('passwordinput', 'Password', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
                   </div>
@@ -104,31 +104,32 @@
                 <!-- Multiple Checkboxes (inline) -->
                 <div class="control-group">
                   <div class="controls">
-                    <label class="checkbox inline" for="rememberme-0">
+                    {{ Form::label('rememberme-0', 'Remember me', array('class' => 'checkbox inline')) }}
                       <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
                         Remember me
-                    </label>
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="control-group">
-                  <label class="control-label" for="signin"></label>
+                  {{ Form::label('signin', null, array('class' => 'control-label')) }}
                   <div class="controls">
                     <button id="signin" name="signin" value="signin" class="btn btn-success">Sign In</button>
                   </div>
                   <a href="recover.php">Forgot you password</a>
                 </div>
               </fieldset>
-            </form>
+            {{ Form::close() }}
           </div>
 
+          <!-- *********** --> 
+          <!-- tab sign up --> 
           <div class="tab-pane fade" id="signup">
-            <form class="form-horizontal" role="form" id="new_user" name="new_user" action="signinup" method="post">
+            {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'new_user', 'id' => 'new_user', 'class' => 'form-horizontal', 'role' => 'form')) }}        
               <fieldset>
                 <!-- Sign Up Form -->
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="email">Email</label>
+                  {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input id="email" name="email" class="form-control" type="text" placeholder="Email" class="input-large" required="">
                   </div>
@@ -136,7 +137,7 @@
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="userid">Alias</label>
+                  {{ Form::label('userid', 'Alias', array('class' => 'control-label')) }}
                   <div class="controls"> 
                     <input id="userid" name="userid" class="form-control" type="text" placeholder="Username" class="input-large" required="">
                   </div>
@@ -144,7 +145,7 @@
                 
                 <!-- Password input-->
                 <div class="control-group">
-                  <label class="control-label" for="password">Password</label>
+                  {{ Form::label('password', 'Password', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
                       <small><em>1-8 Characters</em></small>
@@ -153,7 +154,7 @@
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="reenterpassword">Confirm password</label>
+                  {{ Form::label('reenterpassword', 'Confirm password', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
                   </div>
@@ -161,33 +162,33 @@
                     
                 <!-- Button -->
                 <div class="control-group">
-                  <label class="control-label" for="signup"></label>
+                  {{ Form::label('signup', null, array('class' => 'control-label')) }}
                   <div class="controls">
                     <button id="signup" name="signup" value="signup" class="btn btn-success">Sign Up</button>
                   </div>
                 </div>
               </fieldset>
-            </form>
+            {{ Form::close() }}
           </div>
 
           <div class="tab-pane fade" id="pass">
-            <form class="form-horizontal" role="from" id="forgot_pass" name="forgot_pass" action="recover.php" method="post" >
+            {{ Form::open(array('url' => 'recover', 'metod' => 'POST', 'name' => 'forgot_pass', 'id' => 'forgot_pass', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="email"> Email </label>
+                  {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input id="email" name="email" class="form-control" type="text" placeholder="Email" class="input-large" required="">
                   </div>
                 </div>
 
                 <div class="control-group">
-                  <label class="control-label"> Or </label>
+                  {{ Form::label(null, 'Or', array('class' => 'control-label')) }}
                 </div>
 
                 <!-- Text input-->
                 <div class="control-group">
-                  <label class="control-label" for="email"> Alias </label>
+                  {{ Form::label('alias', 'Alias', array('class' => 'control-label')) }}
                   <div class="controls">
                     <input id="alias" name="alias" class="form-control" type="text" placeholder="Alias" class="input-large" required="">
                   </div>
@@ -195,18 +196,18 @@
 
                 <!-- Button -->
                 <div class="control-group">
-                  <label class="control-label" for="signup"></label>
+                  {{ Form::label('signup', null, array('control-label')) }}
                   <div class="controls">
                     <button id="signup" name="signup" value="signup" class="btn btn-success">Submit</button>
                   </div>
                 </div>
               </fieldset>
-            </form>
+            {{ Form::close() }}
           </div>
 
           <div class="tab-pane fade in" id="why">
             <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-            <p></p><br> Please contact us at <a href="mailto:example@djole.com">email</a> for any other inquiries.</p>
+            <p></p><br> Please contact us at <a href="mailto:suport@jobit.com">email</a> for any other inquiries.</p>
           </div>
 
         </div>

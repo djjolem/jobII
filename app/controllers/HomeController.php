@@ -94,18 +94,34 @@ class HomeController extends BaseController {
 	public function signinup() {
 		
 		if (isset($_POST['signup']) && $_POST['signup'] == 'signup'){
-			$message = 'new user';
+			$message = $this->signup();
 
 			return $this->home($message);
 		}
 
 		if (isset($_POST['signin']) && $_POST['signin'] == 'signin') {
-			$message = 'sign in user';
+			$message = $this->signin();
 			return $this->home($message);
 		}
 
 		$message = 'unknown action';
 		return $this->home($message);
 	}
+
+	private function signup() {
+		return  'new user';
+	}
+
+	private function signin() {
+		return 'sign in user';
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
 
 } // class end
