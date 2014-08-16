@@ -19,18 +19,18 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class=""><a href="/"><strong>List Ads</strong></a></li>
+      <li>{{ HTML::link('/', 'List Ads', array('class' => 'link-bold')) }}</li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="newad"><strong>New Ad</strong></a></li>
+      <li>{{ HTML::link('/newad', 'New Ad', array('class' => 'link-bold')) }} </li>
         
         <?php $signedIn = isset($_SESSION['signedin']) && $_SESSION['signedin']; ?>
         @if ($signedIn)
         <li class="dropdown">
           <a data-toggle="dropdown"> 
             {{ $_SESSION['user_name'] }}
-             &nbsp;
+            &nbsp;
             <img class="pull-right img-responsive img-circle" src="http://placehold.it/32x32" alt="User" />
           </a>
           

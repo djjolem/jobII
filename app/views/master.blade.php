@@ -13,6 +13,7 @@
 
 	{{ HTML::style('css/bootstrap.css') }}
 	{{ HTML::style('css/bootstrap.min.css') }}
+	{{ HTML::style('css/corect.css') }}
 
 	<style type="text/css">
 	@section('style')
