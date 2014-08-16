@@ -75,7 +75,7 @@
                             <div class="modal-body">
                               <div class="form-group">
                                 <label for="cvFile">File input</label>
-                                {{ Form::file('cvFile', array('class' => 'btn', 'id' => 'cvFile'))
+                                {{ Form::file('cvFile', array('class' => 'btn btn-default', 'id' => 'cvFile'))
                                 }}
                                 <p class="help-block">
                                   <br>
