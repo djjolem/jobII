@@ -114,8 +114,8 @@
                 </div>
                 <!-- Button -->
                 <div class="control-group">
-                  {{ Form::label('signin', null, array('class' => 'control-label')) }}
                   <div class="controls">
+                    <div class="">&nbsp;</div>
                     <button id="signin" name="signin" value="signin" class="btn btn-success">Sign In</button>
                   </div>
                   <a href="recover.php">Forgot you password</a>
@@ -165,7 +165,7 @@
                     
                 <!-- Button -->
                 <div class="control-group">
-                  {{ Form::label('signup', null, array('class' => 'control-label')) }}
+                  <div class="">&nbsp;</div>
                   <div class="controls">
                     <button id="signup" name="signup" value="signup" class="btn btn-success">Sign Up</button>
                   </div>
@@ -199,7 +199,7 @@
 
                 <!-- Button -->
                 <div class="control-group">
-                  {{ Form::label('signup', null, array('control-label')) }}
+                  <div class="">&nbsp;</div>
                   <div class="controls">
                     <button id="signup" name="signup" value="signup" class="btn btn-success">Submit</button>
                   </div>
@@ -218,7 +218,9 @@
 
       <div class="modal-footer">
         <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          {{ Form::button('Close', 
+            array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
+          }}
         </center>
       </div>
 
