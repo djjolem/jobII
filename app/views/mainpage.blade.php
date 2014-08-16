@@ -51,13 +51,10 @@
 
                       <div>
                         <small>Owner: {{ $ad['fk_user'] . '-- username' }}</small>
-                        <button type="button" class="btn btn-primary">
-                          Edit ...
-                        </button>
-                        <button type="button" class="btn btn-primary pull-right"
-                              data-toggle="modal" data-target="#myModal_{{ $ad['id'] }}">
-                          Apply
-                        </button>
+                        {{ Form::button('Edit....', array('class' => 'btn btn-primary')) }}
+                        {{ Form::button('Apply', 
+                            array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
+                        }}
                         &nbsp;
                       </div>
                       
@@ -69,10 +66,7 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" 
-                                aria-hidden="true">
-                                &times;
-                              </button>
+                              {{ Form::button('&times;', array('class' => 'close', 'data-dismiss' => 'modal', 'aria-hidden' => 'true')) }}
                               <h4 class="modal-title" id="myModalLabel_{{ $ad['id'] }}">
                                 Apply for {{ $ad['title'] }} at {{ $ad['fk_company'] }}
                               </h4>
@@ -80,8 +74,9 @@
                             
                             <div class="modal-body">
                               <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
+                                <label for="cvFile">File input</label>
+                                {{ Form::file('cvFile', array('class' => 'btn', 'id' => 'cvFile'))
+                                }}
                                 <p class="help-block">
                                   <br>
                                   {{ $ad['short'] }}
@@ -90,18 +85,11 @@
                               <div>
                                 Send my resume / CV
                                 <br>
-                                Send my resume / CV
-                                <br>
-                                Send my resume / CV
                               </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                              </button>
-                              <button type="button" class="btn btn-primary">
-                                Submit Application
-                              </button>
+                              {{ Form::button('Cancel', array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) }}
+                              {{ Form::button('Submit Application', array('class' => 'btn btn-primary'))}}
                             </div>
                           </div>
                         </div>

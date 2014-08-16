@@ -108,8 +108,8 @@
                 <!-- Multiple Checkboxes (inline) -->
                 <div class="control-group">
                   <div class="controls">
-                    {{ Form::checkbox('rememberme', null, array('value' => 'Remember me')) }}
-                    {{ Form::label('rememberme-0', 'Remember me', array('class' => 'checkbox inline')) }}
+                    {{ Form::checkbox('rememberme0', null, array('value' => 'Remember me')) }}
+                    {{ Form::label('rememberme0', 'Remember me', array('class' => 'checkbox inline')) }}
                   </div>
                 </div>
                 <!-- Button -->
@@ -120,7 +120,6 @@
                         array('class' => 'btn btn-success', 'name' => 'signin', 'id' => 'signin', 'value' => 'signin', 'type' => '')) 
                     }}
                   </div>
-                  <a href="recover">Forgot you password</a>
                 </div>
               </fieldset>
             {{ Form::close() }}
