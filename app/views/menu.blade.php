@@ -116,9 +116,11 @@
                 <div class="control-group">
                   <div class="controls">
                     <div class="">&nbsp;</div>
-                    <button id="signin" name="signin" value="signin" class="btn btn-success">Sign In</button>
+                    {{ Form::button('Sign In', 
+                        array('class' => 'btn btn-success', 'name' => 'signin', 'id' => 'signin', 'value' => 'signin', 'type' => '')) 
+                    }}
                   </div>
-                  <a href="recover.php">Forgot you password</a>
+                  <a href="recover">Forgot you password</a>
                 </div>
               </fieldset>
             {{ Form::close() }}
@@ -167,7 +169,9 @@
                 <div class="control-group">
                   <div class="">&nbsp;</div>
                   <div class="controls">
-                    <button id="signup" name="signup" value="signup" class="btn btn-success">Sign Up</button>
+                    {{ Form::button ('Sign Up', 
+                      array('class' => 'btn btn-success', 'id' => 'signup', 'name' => 'signup', 'value' => 'signup', 'type' => '')) 
+                    }}
                   </div>
                 </div>
               </fieldset>
@@ -201,7 +205,7 @@
                 <div class="control-group">
                   <div class="">&nbsp;</div>
                   <div class="controls">
-                    <button id="signup" name="signup" value="signup" class="btn btn-success">Submit</button>
+                    {{ Form::button('Submit', array('class' => 'btn btn-success', 'name' => 'signup', 'id' => 'signup', 'value' => 'signup', 'type' => '')) }}
                   </div>
                 </div>
               </fieldset>
