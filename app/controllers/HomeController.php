@@ -124,4 +124,10 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	public function recover() {
+		$message = 'Recover user account'; 
+
+		return $this->home($message); 
+	}
+
 } // class end
