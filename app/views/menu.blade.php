@@ -21,7 +21,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li>{{ HTML::link('/newad', 'New Ad', array('class' => 'link-bold')) }} </li>
+      <li>{{ HTML::link('/newad', 'New Ad', array('class' => 'link-bold')) }}</li>
 
         @if(Auth::check())
           <li class="dropdown">

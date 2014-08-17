@@ -3,9 +3,9 @@
 <div class="container center-block">
 
 	<div class="container center-block row">
-		<div class="col-xs-2">&nbsp;</div>
+		<div class="col-xs-1">&nbsp;</div>
 
-		<div class="col-xs-8">
+		<div class="col-xs-10">
 
 			@if (!isset($userId) || $userId == 0)
 			<div class="well">
@@ -26,12 +26,6 @@
 				) 
 			}}
 				<h2>Add a new ad</h2>
-				
-				<!-- 
-					TODO: is this hidden field necessary 
-					User id is posible take from session ???
-				 -->
-				{{ Form::hidden('user_id', $userId) }}
 				<div> &nbsp; </div>
 
 				{{ Form::label('company', 'Company') }}
@@ -94,7 +88,7 @@
 		</div>
 	</div>
 
-	<div class="col-xs-2">&nbsp;</div>
+	<div class="col-xs-1">&nbsp;</div>
 </div>
 
 {{ HTML::script('js/bootstrap-datepicker.js') }}

@@ -87,9 +87,9 @@ class HomeController extends BaseController {
 	public function savead() {
 		$adsModel = new Ad; 
 
-		$message = $adsModel->savead();
+		$msgErr = $adsModel->savead();
 
-		return $this->home($message); 
+		return $this->home($msgErr); 
 	}
 
 	/*
