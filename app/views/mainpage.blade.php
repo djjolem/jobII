@@ -54,8 +54,9 @@
                       <div>&nbsp;</div>
 
                       <div>
-                        <small>Owner: {{ $ad['fk_user'] . '-- username' }}</small>
-                        {{ Form::button('Edit....', array('class' => 'btn btn-primary')) }}
+                        @if (Auth::check() && Auth::user()->id == $ad['fk_user'])
+                          {{ Form::button('Edit..', array('class' => 'btn btn-primary')) }}
+                        @endif
                         {{ Form::button('Apply', 
                             array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
                         }}
