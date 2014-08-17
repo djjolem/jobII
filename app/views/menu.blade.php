@@ -11,9 +11,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">
-      jobIT
-    </a>
+    {{ HTML::link('#', 'jobIT', array('class' => 'navbar-brand')) }}
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,27 +28,23 @@
           <a data-toggle="dropdown"> 
             {{ Auth::user()->username }}
             &nbsp;
-            <img class="pull-right img-responsive img-circle" src="http://placehold.it/32x32" alt="User" />
+            {{ HTML::image('http://placehold.it/32x32', 'User', array('class' => 'pull-right img-responsive img-circle')) }}
           </a>
           
           <ul class="dropdown-menu"  data-no-collapse="true">
             <li>
-              <a href="#" onclick="submitForm('user_settings')">Settings</a>
+              {{ HTML::link('#', 'Settings', array('onclick' => 'submitForm("user_settings")')) }}
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#" onclick="submitForm('signinup');">Sign out</a>
+              {{ HTML::link('#', 'Sign out', array('onclick' => 'submitForm("signinup")')) }}
             </li>
           </ul>  
         </li>
         @else
           <li class="dropdown">
-          <a class="btn btn-default btn-block" href="#signin" data-toggle="modal" 
-              data-target="#myModalMenu">
-            Sign In
-            Sign up
-          </a>
-        </li>
+            {{ HTML::link('#', 'Sign in / Sign up', array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
+          </li>
         @endif
     </ul>
   </div><!-- /.navbar-collapse -->
@@ -71,10 +65,10 @@
       <br>
       <div class="bs-example bs-example-tabs">
         <ul id="myTab" class="nav nav-tabs">
-          <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
-          <li class=""><a href="#pass" data-toggle="tab"> Forgot password </a></li>
-          <li class=""><a href="#signup" data-toggle="tab">Sign up</a></li>
-          <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
+          <li class="">{{ HTML::link('#signin', 'Sign In', array('data-toggle' => 'tab')) }}</li>
+          <li class="">{{ HTML::link('#pass', 'Forgot password', array('data-toggle' => 'tab')) }}</li> 
+          <li class="">{{ HTML::link('#signup', 'Sign up', array('data-toggle' => 'tab')) }}</li> 
+          <li class="">{{ HTML::link('#why', 'Why?', array('data-toggle' => 'tab')) }}</li> 
         </ul>
       </div>
 
@@ -212,7 +206,7 @@
 
           <div class="tab-pane fade in" id="why">
             <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-            <p></p><br> Please contact us at <a href="mailto:suport@jobit.com">email</a> for any other inquiries.</p>
+            <p></p><br> Please contact us at {{ HTML::link('mailto:suport@jobit.com', 'email') }} for any other inquiries.</p>
           </div>
 
         </div>
