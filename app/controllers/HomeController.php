@@ -26,14 +26,22 @@ class HomeController extends BaseController {
 	|--------------------------------------------------------------------------
 	|
 	*/
-	public function home($message = null) {
+	public function home($msgErr = null) {
 		$adsModel = new Ad;
 		$adsList = $adsModel->getAllAds()->toArray();
 
 		$data = array(
 			'ads' => $adsList,
-			'msg' => $message,
 		);
+
+		if ($msgErr != null) {
+			if (isset($msgErr['err'])) {
+				$data['err'] = $msgErr['err'];
+			}
+			if (isset($msgErr['msg'])) {
+				$data['msg'] = $msgErr['msg'];
+			}
+		}
 
 		return View::make('home', $data);
 	}
@@ -109,7 +117,9 @@ class HomeController extends BaseController {
 	}
 
 	private function signup() {
-		return  'new user';
+		$userCtrl = new UsersController; 
+		
+		return $userCtrl->store();
 	}
 
 	private function signin() {

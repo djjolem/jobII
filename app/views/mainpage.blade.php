@@ -6,15 +6,21 @@
 
   <div class="col-xs-10">
 
+    {{ var_dump($_SESSION)}}
+
     @if(isset($err) && $err != null)
     <div>
-      <p class="bg-danger">{{ $err }}</p>
+      @foreach($err as $error)
+        <p class="bg-danger">{{ $error }}</p>
+      @endforeach
     </div>
     @endif
 
     @if(isset($msg) && $msg != null)
     <div>
-      <p class="bg-info">{{ $msg }}</p>
+      @foreach($msg as $message)
+        <p class="bg-info">{{ $message }}</p>
+      @endforeach
     </div>
     @endif
 

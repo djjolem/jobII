@@ -82,8 +82,8 @@
       <div class="modal-body">
         <div id="myTabContent" class="tab-content">
           
-          <!-- ************ --> 
-          <!-- Sign In Form -->
+          <!-- ***************** --> 
+          <!-- Tab: Sign In Form -->
           <div class="tab-pane fade active in" id="signin">
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'sign_in', 'id' => 'sign_in', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
@@ -125,13 +125,11 @@
             {{ Form::close() }}
           </div>
 
-          <!-- *********** --> 
-          <!-- tab sign up --> 
+          <!-- ***************** --> 
+          <!-- Tab: Sign Up Form --> 
           <div class="tab-pane fade" id="signup">
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'new_user', 'id' => 'new_user', 'class' => 'form-horizontal', 'role' => 'form')) }}        
               <fieldset>
-                <!-- Sign Up Form -->
-                <!-- Text input-->
                 <div class="control-group">
                   {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
                   <div class="controls">
@@ -141,9 +139,9 @@
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('userid', 'Alias', array('class' => 'control-label')) }}
+                  {{ Form::label('username', 'Alias', array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::text('userid', null, array('class' => 'form-control input-large', 'placeholder' => 'Username', 'required' => '')) }}
+                    {{ Form::text('username', null, array('class' => 'form-control input-large', 'placeholder' => 'Username', 'required' => '')) }}
                   </div>
                 </div>
                 
@@ -158,9 +156,11 @@
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('reenterpassword', 'Confirm password', array('class' => 'control-label')) }}
+                  {{ Form::label('password_confirmation', 'Confirm password', 
+                      array('class' => 'control-label')) 
+                  }}
                   <div class="controls">
-                    {{ Form::password('reenterpassword', array('class' => 'form-control input-large', 'placeholder' => '*********', 'required' => '' )) }}
+                    {{ Form::password('password_confirmation', array('class' => 'form-control input-large', 'placeholder' => '*********', 'required' => '' )) }}
                   </div>
                 </div>
                     

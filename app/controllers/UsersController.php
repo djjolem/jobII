@@ -30,26 +30,30 @@ class UsersController extends Controller
         $repo = App::make('UserRepository');
         $user = $repo->signup(Input::all());
 
-        if ($user->id) {
-            Mail::send(
-                Config::get('confide::email_account_confirmation'),
-                compact('user'),
-                function ($message) use ($user) {
-                    $message
-                        ->to($user->email, $user->username)
-                        ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
-                }
-            );
+        $msgErr = array(); 
 
-            return Redirect::action('UsersController@login')
-                ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+        if ($user->id) {
+            // TODO: enable account confirmation via email
+            if (false) {
+                Mail::send(
+                    Config::get('confide::email_account_confirmation'),
+                    compact('user'),
+                    function ($message) use ($user) {
+                        $message
+                            ->to($user->email, $user->username)
+                            ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                    }
+                );
+            }
+
+            $msgErr['msg'] = array(Lang::get('confide::confide.alerts.account_created'));
         } else {
             $error = $user->errors()->all(':message');
 
-            return Redirect::action('UsersController@create')
-                ->withInput(Input::except('password'))
-                ->with('error', $error);
+            $msgErr['err'] = $error; 
         }
+
+        return $msgErr; 
     }
 
     /**
