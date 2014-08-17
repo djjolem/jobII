@@ -16,7 +16,8 @@ Route::get('/', 'HomeController@home');
 Route::get('/newad', 'HomeController@newad');
 Route::post('/savead', 'HomeController@savead');
 Route::post('/signinup', 'HomeController@signinup');
-Route::post('/recover', 'HomeController@recover'); 
+Route::post('/recover', 'HomeController@recover');
+Route::post('/settings', 'HomeController@settings');
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

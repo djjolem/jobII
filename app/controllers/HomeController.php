@@ -139,4 +139,15 @@ class HomeController extends BaseController {
 		return $this->home($message); 
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function settings() {
+		return View::make('settings');
+	}
+
 } // class end
