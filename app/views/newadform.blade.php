@@ -7,14 +7,13 @@
 
 		<div class="col-xs-10">
 
-			@if (!isset($userId) || $userId == 0)
-			<div class="well">
-				<p>Shoul I create an account?</p>
-				<p>Button ??</p>
-				<p>Button New account</p>
-			</div>
+			@if (!Auth::check())
+				<div class="well">
+					<p>Shoul I create an account?</p>
+					<p>Button New account</p>
+				</div>
 			@endif
-
+			
 			{{ Form::open(array(
 					'url' => 'savead',
 					'method' => 'POST',
