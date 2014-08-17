@@ -34,7 +34,6 @@ class HomeController extends BaseController {
 			'ads' => $adsList,
 		);
 
-		/*
 		if ($msgErr != null) {
 			if (isset($msgErr['err'])) {
 				$data['err'] = $msgErr['err'];
@@ -43,7 +42,6 @@ class HomeController extends BaseController {
 				$data['msg'] = $msgErr['msg'];
 			}
 		}
-		*/
 
 		return View::make('home', $data);
 	}
@@ -103,44 +101,28 @@ class HomeController extends BaseController {
 	*/
 	public function signinup() {
 		
+		$userCtrl = new UsersController; 
+
 		if (isset($_POST['signup']) && $_POST['signup'] == 'signup'){
-			$msgErr = $this->signup();
+			$msgErr = $userCtrl->store();
 
 			return $this->home($msgErr);
 		}
 
 		if (isset($_POST['signin']) && $_POST['signin'] == 'signin') {
-			$msgErr = $this->signin();
+			$msgErr = $userCtrl->doLogin();
 
 			return $this->home($msgErr);
 		}
 
 		if (isset($_POST['signout']) && $_POST['signout'] == 'signout') {
-			$msgErr = $this->signout();
+			$msgErr = $userCtrl->logout();
 
 			return $this->home($msgErr);
 		}
 
 		$message = 'Unknown action';
 		return $this->home($message);
-	}
-
-	private function signup() {
-		$userCtrl = new UsersController; 
-		
-		return $userCtrl->store();
-	}
-
-	private function signin() {
-		$userCtrl = new UsersController; 
-
-		return $userCtrl->doLogin();;
-	}
-
-	private function signout() {
-		$userCtrl = new UsersController;
-
-		return $userCtrl->logout();
 	}
 
 	/*

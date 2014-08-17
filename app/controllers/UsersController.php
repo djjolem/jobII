@@ -83,7 +83,7 @@ class UsersController extends Controller
         $msgErr = array();
 
         if ($repo->login($input)) {
-            $msgErr['msg'] = array('Welcome');
+            $msgErr['msg'] = array('Welcome ' . Auth::user()->username);
             return $msgErr;
         } else {
             if ($repo->isThrottled($input)) {
@@ -197,7 +197,5 @@ class UsersController extends Controller
     public function logout()
     {
         Confide::logout();
-
-        return Redirect::to('/');
     }
 }
