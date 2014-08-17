@@ -30,7 +30,7 @@ class UsersController extends Controller
         $repo = App::make('UserRepository');
         $user = $repo->signup(Input::all());
 
-        $msgErr = array(); 
+        $msgErr = array();
 
         if ($user->id) {
             // TODO: enable account confirmation via email
@@ -80,8 +80,11 @@ class UsersController extends Controller
         $repo = App::make('UserRepository');
         $input = Input::all();
 
+        $msgErr = array();
+
         if ($repo->login($input)) {
-            return Redirect::intended('/');
+            $msgErr['msg'] = array('Welcome');
+            return $msgErr;
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -91,9 +94,9 @@ class UsersController extends Controller
                 $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
             }
 
-            return Redirect::action('UsersController@login')
-                ->withInput(Input::except('password'))
-                ->with('error', $err_msg);
+            // return Redirect::action('UsersController@login')
+            //     ->withInput(Input::except('password'))
+            //    ->with('error', $err_msg);
         }
     }
 

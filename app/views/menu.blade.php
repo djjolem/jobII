@@ -24,12 +24,11 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li>{{ HTML::link('/newad', 'New Ad', array('class' => 'link-bold')) }} </li>
-        
-        <?php $signedIn = isset($_SESSION['signedin']) && $_SESSION['signedin']; ?>
-        @if ($signedIn)
-        <li class="dropdown">
+
+        @if(Auth::check())
+          <li class="dropdown">
           <a data-toggle="dropdown"> 
-            {{ $_SESSION['user_name'] }}
+            {{ Auth::user()->username }}
             &nbsp;
             <img class="pull-right img-responsive img-circle" src="http://placehold.it/32x32" alt="User" />
           </a>
@@ -40,12 +39,12 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#" onclick="submitForm('user_signout');">Sign out</a>
+              <a href="#" onclick="submitForm('signinup');">Sign out</a>
             </li>
           </ul>  
         </li>
-        @else 
-        <li class="dropdown">
+        @else
+          <li class="dropdown">
           <a class="btn btn-default btn-block" href="#signin" data-toggle="modal" 
               data-target="#myModalMenu">
             Sign In
@@ -88,16 +87,16 @@
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'sign_in', 'id' => 'sign_in', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
                 <div class="control-group">
-                  {{ Form::label('userid', 'Alias', array('calss' => 'control-label')) }}
+                  {{ Form::label('username', 'Alias', array('calss' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::text('userid', null, array('class' => 'form-control input-medium', 'placeholder' => 'Username or email', 'required' => '')) }}
+                    {{ Form::text('username', null, array('class' => 'form-control input-medium', 'placeholder' => 'Username or email', 'required' => '')) }}
                   </div>
                 </div>
                 <!-- Password input-->
                 <div class="control-group">
-                {{ Form::label('passwordinput', 'Password', array('class' => 'control-label')) }}
+                {{ Form::label('password', 'Password', array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::password('passwordinput', array(
+                    {{ Form::password('password', array(
                         'class' => 'form-control input-medium', 
                         'placeholder' => '*********', 'required' => ''
                       )) 

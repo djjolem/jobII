@@ -6,8 +6,6 @@
 
   <div class="col-xs-10">
 
-    {{ var_dump($_SESSION)}}
-
     @if(isset($err) && $err != null)
     <div>
       @foreach($err as $error)
