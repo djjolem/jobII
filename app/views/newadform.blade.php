@@ -90,12 +90,14 @@
 	<div class="col-xs-1">&nbsp;</div>
 </div>
 
-{{ HTML::script('js/bootstrap-datepicker.js') }}
+@stop
 
-<script type="text/javascript">
-$(document).ready(function($){
-	$('#deadline').datepicker();
-});
-</script>
+@section('scripts')
+	{{ HTML::script('js/bootstrap-datepicker.js')}}
 
+	<script type="text/javascript">
+	$(document).ready(function($){
+		$('#deadline').datepicker();
+	});
+	</script>
 @stop

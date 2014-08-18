@@ -15,13 +15,6 @@
 	{{ HTML::style('css/bootstrap.min.css') }}
 	{{ HTML::style('css/corect.css') }}
 
-	<style type="text/css">
-	@section('style')
-		body {
-			paddin-top:60px;
-		}
-	@show
-	</style>
 </head>
 
 <body>
@@ -53,5 +46,8 @@
 
 	{{ HTML::script('js/jquery-2.1.1.min.js') }}
 	{{ HTML::script('js/bootstrap.js') }}
+
+	@yield('scripts')
+
 </body>
 </html>
