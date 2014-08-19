@@ -54,11 +54,6 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function newad() {
-
-		// TODO: find user
-		// TODO: Use session - and from there get user id 
-		$user = array('user', 'djm');
-
 		// if userId == 0 =then==> $userId = $USER_ID_DEFAULT;
 		$userId = 0; 
 
@@ -111,7 +106,7 @@ class HomeController extends BaseController {
 
 		if (isset($_POST['signin']) && $_POST['signin'] == 'signin') {
 			$msgErr = $userCtrl->doLogin();
-
+			
 			return $this->home($msgErr);
 		}
 
