@@ -3,7 +3,7 @@
 class Ad extends Eloquent {
 
 	public function getAllAds() {	
-		return Ad::all();
+		return Ad::orderBy('deadline', 'DESC')->get();
 	}
 
 	public function saveAd() {
