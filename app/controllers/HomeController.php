@@ -33,11 +33,9 @@ class HomeController extends BaseController {
 		$allAds = array();
 		foreach ($adsList as $ad){
 			$packAd = array();
+
 			$packAd['ad'] = $ad;
-
-			// TODO: Fetch tags from database 
 			$tags = $adsModel->getTagsByAdId($ad['id']);
-
 			$packAd['tags'] = $tags;
 
 			$allAds[] = $packAd;

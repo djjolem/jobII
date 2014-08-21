@@ -8,7 +8,14 @@ class Ad extends Eloquent {
 
 	public function getTagsByAdId($adId) {
 		$tags = AdTags::where('ad_id', '=', $adId)->get();
-		return $tags;
+
+		$strTags = array();
+		foreach ($tags as $tag){
+			$tagTag = Tag::where('id', '=', $tag['tag_id'])->get();
+			$strTags[] = $tagTag[0]['name'];
+		}
+
+		return $strTags;
 	}
 
 	public function saveAd() {
