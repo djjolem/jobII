@@ -35,7 +35,9 @@ class HomeController extends BaseController {
 			$packAd = array();
 			$packAd['ad'] = $ad;
 
-			$tags = array('HTML', 'CSS', 'PHP', 'Laravel', 'MySQL');
+			// TODO: Fetch tags from database 
+			$tags = $adsModel->getTagsByAdId($ad['id']);
+
 			$packAd['tags'] = $tags;
 
 			$allAds[] = $packAd;
@@ -71,7 +73,7 @@ class HomeController extends BaseController {
 		// TODO: get companies, and their IDs
 		$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
 
-		// TODO: get tags from database
+		// TODO: Fetch tags from database
 		$tags = array(1 => 'HTML', 2 => 'CSS', 3 => 'PHP', 4 => 'Laravel');
 		
 		$data = array(

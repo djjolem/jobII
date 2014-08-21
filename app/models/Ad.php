@@ -6,6 +6,11 @@ class Ad extends Eloquent {
 		return Ad::orderBy('deadline', 'DESC')->get();
 	}
 
+	public function getTagsByAdId($adId) {
+		$tags = AdTags::where('ad_id', '=', $adId)->get();
+		return $tags;
+	}
+
 	public function saveAd() {
 
 		// default value for user id is 0
