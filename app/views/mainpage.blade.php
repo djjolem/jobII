@@ -21,9 +21,9 @@
       @endforeach
     </div>
     @endif
-
     <div class="accordion" id="accordion">
-      @foreach($ads as $ad) 
+      @foreach($ads as $ad0)
+      <?php $ad = $ad0['ad'] ?> 
     
       <div class="thumbnails">
       <div class="thumbnail clearfix">
@@ -115,12 +115,8 @@
       </div>
       <div class="row">
         <div class="col-xs-10">
-
-          {{-- TODO: set corect tags --}}
-          {{-- TODO: add table tags --}}
-          {{-- TODO: add table ad_tags --}}
-          <?php $tags = array('CSS', 'HTML', 'Laravel'); ?>
-          @if (sizeof($tags) > 0)
+          <?php $tags = $ad0['tags']; ?>
+          @if (isset($tags) && sizeof($tags) > 0)
             @foreach ($tags as $tag)
               <button type="button" class="btn btn-info">{{ $tag }}</button>
             @endforeach

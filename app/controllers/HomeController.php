@@ -30,10 +30,21 @@ class HomeController extends BaseController {
 		$adsModel = new Ad;
 		$adsList = $adsModel->getAllAds()->toArray();
 
-		$data = array(
-			'ads' => $adsList,
-		);
+		$allAds = array();
+		foreach ($adsList as $ad){
+			$packAd = array();
+			$packAd['ad'] = $ad;
 
+			$tags = array('HTML', 'CSS', 'PHP', 'Laravel', 'MySQL');
+			$packAd['tags'] = $tags;
+
+			$allAds[] = $packAd;
+		}
+
+		$data = array(
+			'ads' => $allAds,
+		);
+	
 		if ($msgErr != null) {
 			if (isset($msgErr['err'])) {
 				$data['err'] = $msgErr['err'];
@@ -54,7 +65,7 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function newad() {
-		// if userId == 0 =then==> $userId = $USER_ID_DEFAULT;
+			// if userId == 0 then==> $userId = $USER_ID_DEFAULT;
 		$userId = 0; 
 
 		// TODO: get companies, and their IDs
@@ -145,4 +156,4 @@ class HomeController extends BaseController {
 		return View::make('settings');
 	}
 
-} // class end
+}
