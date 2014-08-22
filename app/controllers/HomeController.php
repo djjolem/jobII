@@ -65,7 +65,9 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function newad() {
-			// if userId == 0 then==> $userId = $USER_ID_DEFAULT;
+		$tagsModel = new Tag;
+		
+		// if userId == 0 then==> $userId = $USER_ID_DEFAULT;
 		$userId = 0; 
 
 		// TODO: get companies, and their IDs
@@ -73,6 +75,7 @@ class HomeController extends BaseController {
 
 		// TODO: Fetch tags from database
 		$tags = array(1 => 'HTML', 2 => 'CSS', 3 => 'PHP', 4 => 'Laravel');
+		$tags = $tagsModel->getAllTags();
 		
 		$data = array(
 			'userId' => $userId, 

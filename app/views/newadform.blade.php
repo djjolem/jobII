@@ -52,9 +52,9 @@
 				{{ Form::label('cb_tag[]', 'Tags') }}
 				<br />
 				<span id="tags_groupde">
-					@foreach ($tags as $tagId => $tagName)
-						{{ Form::checkbox('cb_tag[]', $tagName) }}
-						{{ Form::label('', $tagName) }}
+					@foreach ($tags as $tag)
+						{{ Form::checkbox('cb_tag[]', $tag['name']) }}
+						{{ Form::label('', $tag['name']) }}
 					@endforeach
 				</span>
 				<div> &nbsp; </div>
