@@ -31,6 +31,7 @@ class Ad extends Eloquent {
 		$adText = $_POST['ad_text'];
 		// TODO: get checked tags 
 		$deadline = $_POST['deadline'];
+		$location = $_POST['location'];
 
 		$ad = new Ad; 
 		$ad->title = $adTitle; 
@@ -38,7 +39,8 @@ class Ad extends Eloquent {
 		$ad->ad_text = $adText; 
 		$ad->fk_user = $userId; 
 		$ad->fk_company = $companyId; 
-		$ad->deadline = $deadline; 
+		$ad->deadline = $deadline;
+		$ad->location = $location; 
 		$ad->save(); 
 
 		// TODO: insert Tags 

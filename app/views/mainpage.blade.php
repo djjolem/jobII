@@ -123,8 +123,9 @@
             @endforeach
           @endif
 
-          {{-- TODO get location from DB --}}
-          <button type="button" class="btn btn-info pull-right">{{ 'Location' }}</button>
+          @if ($ad['location'] != '')
+            <button type="button" class="btn btn-info pull-right">{{ $ad['location'] }}</button>
+          @endif
         </div>
         <div class="col-xs-2">
           <h4>

@@ -73,14 +73,14 @@
 				<div> &nbsp; </div>
 
 				<div>
-					{{ Form::label('Location') }}
-					<br>
-					Location - make list of locations
+					{{ Form::label('location', 'Location', array('class' => 'control-lablel')) }}
+					{{ Form::text('location', null, 
+							array('class' => 'form-control', 'placeholder' => 'Location')) 
+					}}
 				</div>
 				<div> &nbsp; </div>
 
 				{{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
-
 				{{ Form::reset('Clear', array('class' => 'btn btn-info')) }}
 
 			{{ Form::close() }}
