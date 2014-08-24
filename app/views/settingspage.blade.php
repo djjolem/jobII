@@ -66,6 +66,10 @@
 						<td> Biography - CV - resume </td>
 						<td> Edit you resume </td>
 					</tr>
+					<tr>
+						<td> Jobs applied </td>
+						<td> ... / if applicant </td>
+					</tr>
 				</tbody>
 
 				<tfoot>
