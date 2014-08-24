@@ -109,7 +109,6 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function signinup() {
-		
 		$userCtrl = new UsersController; 
 
 		if (isset($_POST['signup']) && $_POST['signup'] == 'signup'){
@@ -156,7 +155,11 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function settings() {
-		return View::make('settings');
+		if (Confide::user()) {
+			return View::make('settings');
+		}
+
+		return Redirect::to('/')->with($msgErr);
 	}
 
 }
