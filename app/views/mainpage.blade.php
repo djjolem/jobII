@@ -22,8 +22,7 @@
     </div>
     @endif
     <div class="accordion" id="accordion">
-      @foreach($ads as $ad0)
-      <?php $ad = $ad0['ad'] ?> 
+      @foreach($ads as $ad)
     
       <div class="thumbnails">
       <div class="thumbnail clearfix">
@@ -116,7 +115,7 @@
       </div>
       <div class="row">
         <div class="col-xs-10">
-          <?php $tags = $ad0['tags']; ?>
+          <?php $tags = $ad['tags']; ?>
           @if (isset($tags) && sizeof($tags) > 0)
             @foreach ($tags as $tag)
               <button type="button" class="btn btn-info">{{ $tag }}</button>
