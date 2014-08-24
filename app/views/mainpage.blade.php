@@ -64,6 +64,16 @@
                       </div>
                       
                       <!-- Modal -->
+                      {{ Form::open(array('url' => 'commitcv', 'method' => 'POST', 'name' => 'commit_cv', 'id' => 'commit_cv', 'class' => 'form', 'role' => 'form',  'enctype' =>'multipart/form-data')) 
+                      }}
+                      
+                      @if (Auth::user() != null)
+                        {{ Form::hidden('user_id', Auth::user()->id) }}
+                      @else
+                        {{ Form::hidden('user_id', '0') }}
+                      @endif
+
+                      {{ Form::hidden('ad_id', $ad['id']) }}
                       <div class="modal fade" id="myModal_{{ $ad['id'] }}" 
                           name="myModal_{{ $ad['id'] }}" tabindex="-1" 
                           role="dialog" aria-labelledby="myModalLabel_{{ $ad['id'] }}" 
@@ -79,27 +89,36 @@
                             
                             <div class="modal-body">
                               <div class="form-group">
-                                <label for="cvFile">File input</label>
+                                {{ Form::label('shortdesc', 'Ad description', array('calss' => '')) }}
+                                <p id='shortdesc' class="help-block">
+                                  {{ $ad['short'] }}
+                                  <br>
+                                </p>
+
+                                {{ Form::label('cvFile', 'File input', array('class' => '', )) }}
                                 {{ Form::file('cvFile', array('class' => 'btn btn-default', 'id' => 'cvFile'))
                                 }}
-                                <p class="help-block">
-                                  <br>
-                                  {{ $ad['short'] }}
-                                </p>
-                              </div>
-                              <div>
-                                Send my resume / CV
-                                <br>
+
+                                <br />
+
+                                {{ Form::label('message', 'Additional') }}
+                                {{ Form::textarea('message', null, array('class' => 'form-control input-large', 'placeholder' => 'Additional', 'rows' => '3')) }}
                               </div>
                             </div>
+
                             <div class="modal-footer">
-                              {{ Form::button('Cancel', array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) }}
-                              {{ Form::button('Submit Application', array('class' => 'btn btn-primary'))}}
+                            {{ Form::button('Cancel', 
+                                array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
+                            }}
+                            {{ Form::submit('Submit Application', 
+                                array('class' => 'btn btn-primary'))
+                            }}
                             </div>
                           </div>
                         </div>
                       </div>
-                      <!-- modal end --> 
+                      {{ Form::close() }}
+                      <!-- Modal end --> 
 
                     </div>
                   </div>

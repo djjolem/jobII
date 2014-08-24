@@ -1,5 +1,7 @@
 <?php
 
+
+
 class HomeController extends BaseController {
 
 	/*
@@ -157,6 +159,42 @@ class HomeController extends BaseController {
 		}
 
 		return Redirect::to('/')->with($msgErr);
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function commitcv() {
+		
+		$input = Input::all();
+		
+		$userId = array_get($input, 'user_id');
+		$adId = array_get($input, 'ad_id');
+		$message = array_get($input, 'message');
+
+		$file = Input::file('cvFile');
+
+		// TODO: add file validation
+		// $rules = array('file'=>'mimes:pdf,doc'|max:...)
+		// $validator = Validator::make()...
+
+		if ($file == null) {
+			$msgErr['err'] = array('There is not selected file.');
+			return $this->home($msgErr);
+		}
+
+		$newFilename = str_random(8) . '_' . $file->getClientOriginalName();
+		$uploaded = $file->move(CV_DIR, $newFilename);
+
+		$applModel = new Application; 
+		$applModel->saveNewApplication($userId, $adId, $newFilename, $message);
+
+		$msgErr['msg'] = array('Successfully applied for job.');
+		return $this->home($msgErr);
 	}
 
 }

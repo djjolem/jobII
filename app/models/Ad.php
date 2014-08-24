@@ -22,6 +22,9 @@ class Ad extends Eloquent {
 
 		// default value for user id is 0
 		$userId = 0;
+
+		// TODO: authentication check don't doing here 
+		// move this part to controller
 		if (Auth::user() != null) {
 			$userId = Auth::user()->id;
 		}

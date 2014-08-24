@@ -14,13 +14,19 @@
 //
 Route::get('/', 'HomeController@home');
 Route::get('/newad', 'HomeController@newad');
+
 Route::post('/savead', 'HomeController@savead');
 Route::post('/signinup', 'HomeController@signinup');
 Route::post('/recover', 'HomeController@recover');
 Route::post('/settings', 'HomeController@settings');
+Route::post('/commitcv', 'HomeController@commitcv');
 
+// TODO: get methodes in case user try to post link (get method)
+// TODO: instead get link throught application
+// 
 Route::get('/settings', 'HomeController@settings');
 
+// TODO: remove unused routes 
 // Confide routes
 Route::get('users/create', 'UsersController@create');
 Route::post('users', 'UsersController@store');
