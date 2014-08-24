@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+    "doctrine/dbal": "~2.3",
     "zizaco/confide": "~4.0@dev"
 	},
 	"autoload": {
