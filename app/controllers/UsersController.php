@@ -87,16 +87,14 @@ class UsersController extends Controller
             return $msgErr;
         } else {
             if ($repo->isThrottled($input)) {
-                $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
+                $msgErr['err'] = array(Lang::get('confide::confide.alerts.too_many_attempts'));
             } elseif ($repo->existsButNotConfirmed($input)) {
-                $err_msg = Lang::get('confide::confide.alerts.not_confirmed');
+                $msgErr['err'] = array(Lang::get('confide::confide.alerts.not_confirmed'));
             } else {
-                $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
-            }
+                $msgErr['err'] = array(Lang::get('confide::confide.alerts.wrong_credentials'));
+            } 
 
-            // return Redirect::action('UsersController@login')
-            //     ->withInput(Input::except('password'))
-            //    ->with('error', $err_msg);
+            return $msgErr;
         }
     }
 

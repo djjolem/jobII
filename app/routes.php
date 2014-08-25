@@ -25,6 +25,7 @@ Route::post('/commitcv', 'HomeController@commitcv');
 // TODO: instead get link throught application
 // 
 Route::get('/settings', 'HomeController@settings');
+Route::get('/commitcv', 'HomeController@commitcv');
 
 // TODO: remove unused routes 
 // Confide routes
