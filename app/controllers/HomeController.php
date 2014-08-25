@@ -197,4 +197,15 @@ class HomeController extends BaseController {
 		return $this->home($msgErr);
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function myads() {
+		return View::make('myads');
+	}
+
 }

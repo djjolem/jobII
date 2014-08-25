@@ -35,6 +35,9 @@
             <li>
               {{ HTML::link('#', 'Settings', array('onclick' => 'submitForm("user_settings")')) }}
             </li>
+            <li>
+              {{ HTML::link('#', 'My Ads', array('onclick' => 'submitForm("my_ads")')) }}
+            </li>
             <li class="divider"></li>
             <li>
               {{ HTML::link('#', 'Sign out', array('onclick' => 'submitForm("signinup")')) }}
@@ -238,6 +241,14 @@
   ))
 }}
   {{ Form::hidden('signout', 'signout') }}
+{{ Form::close() }}
+
+{{ Form::open(array(
+    'url' => 'myads', 'method' => 'POST', 'name' => 'my_ads',
+    'id' => 'my_ads', 'class' => 'form-horizontal', 'role' => 'form' 
+  ))
+}}
+  {{ Form::hidden('myads', 'myads') }}
 {{ Form::close() }}
 
 <script type="text/javascript">
