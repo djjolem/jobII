@@ -53,13 +53,15 @@
                       <div>&nbsp;</div>
 
                       <div>
+                        
                         @if (Auth::check() && Auth::user()->id == $ad['fk_user'])
-                          {{ Form::button('Edit..', array('class' => 'btn btn-primary')) }}
-                          {{ Form::button('Delete..', array('class' => 'btn btn-primary')) }}
+                          {{ Form::button('Edit..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("adedit")')) }}
+                          {{ Form::button('Delete..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("addelete")' ))  }}
+                        @else 
+                          {{ Form::button('Apply', 
+                              array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
+                          }}
                         @endif
-                        {{ Form::button('Apply', 
-                            array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
-                        }}
                         &nbsp;
                       </div>
                       
@@ -170,5 +172,18 @@
 
   <div class="col-xs-1">&nbsp;</div>
 </div><!-- content" -->
+
+{{ Form::open(array('url' => 'adedit', 'method' => 'POST', 'name' => 'adedit', 'id' => 'adedit', 'class' => 'form', 'role' => 'form')) }}
+{{ Form::close() }}
+
+{{ Form::open(array('url' => 'addelete', 'method' => 'POST', 'name' => 'addelete', 'id' => 'addelete', 'class' => 'form', 'role' => 'form')) }}
+{{ Form::close() }}
+
+<script type="text/javascript">
+var submitForm = function(formName){
+  document.getElementById(formName).submit();
+}
+
+</script>
 
 @stop

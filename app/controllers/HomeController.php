@@ -208,4 +208,21 @@ class HomeController extends BaseController {
 		return View::make('myads');
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function adedit()
+	{
+		return $this->home();
+	}
+
+	public function addelete()
+	{
+		return $this->home();
+	}
+
 }
