@@ -29,6 +29,7 @@ ROute::post('/addelete', 'HomeController@addelete');
 // 
 Route::get('/settings', 'HomeController@settings');
 Route::get('/commitcv', 'HomeController@commitcv');
+Route::get('adedit', 'HomeController@adedit');
 
 // TODO: remove unused routes 
 // Confide routes
