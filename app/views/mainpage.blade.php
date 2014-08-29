@@ -55,8 +55,8 @@
                       <div>
                         
                         @if (Auth::check() && Auth::user()->id == $ad['fk_user'])
-                          {{ Form::button('Edit..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("adedit")')) }}
-                          {{ Form::button('Delete..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("addelete")' ))  }}
+                          {{ Form::button('Edit..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("adedit", ' . $ad['id'] . ')')) }}
+                          {{ Form::button('Delete..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("addelete", ' . $ad['id'] . ')' ))  }}
                         @else 
                           {{ Form::button('Apply', 
                               array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
@@ -131,7 +131,9 @@
         </span>
         <span class="col-xs-2">
           <img src="http://placehold.it/300x200" alt="Logo"
-            class="pull-right img-responsive thumb margin10 img-thumbnail">
+            class="pull-right img-responsive thumb margin10 img-thumbnail" />
+
+          {{ Form::button('About Company', array('class' => 'btn btn-default')) }}
         </span>
       </div>
       <div class="row">
@@ -173,10 +175,14 @@
   <div class="col-xs-1">&nbsp;</div>
 </div><!-- content" -->
 
-{{ Form::open(array('url' => 'adedit', 'method' => 'POST', 'name' => 'adedit', 'id' => 'adedit', 'class' => 'form', 'role' => 'form')) }}
+{{ Form::open(array('url' => 'adedit', 'method' => 'POST', 'name' => 'adedit', 'id' => 'adedit', 
+    'class' => 'form', 'role' => 'form')) }}
+  {{ Form::hidden('adedit', 'adedit') }}
 {{ Form::close() }}
 
-{{ Form::open(array('url' => 'addelete', 'method' => 'POST', 'name' => 'addelete', 'id' => 'addelete', 'class' => 'form', 'role' => 'form')) }}
+{{ Form::open(array('url' => 'addelete', 'method' => 'POST', 'name' => 'addelete', 'id' => 'addelete', 
+    'class' => 'form', 'role' => 'form')) }}
+  {{ Form::hidden('addelete', 'addelete') }}
 {{ Form::close() }}
 
 <script type="text/javascript">
