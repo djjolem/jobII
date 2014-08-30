@@ -178,15 +178,18 @@
 {{ Form::open(array('url' => 'adedit', 'method' => 'POST', 'name' => 'adedit', 'id' => 'adedit', 
     'class' => 'form', 'role' => 'form')) }}
   {{ Form::hidden('adedit', 'adedit') }}
+  {{ Form::hidden('ad_id', '', array('id' => 'ad_id')) }}
 {{ Form::close() }}
 
 {{ Form::open(array('url' => 'addelete', 'method' => 'POST', 'name' => 'addelete', 'id' => 'addelete', 
     'class' => 'form', 'role' => 'form')) }}
   {{ Form::hidden('addelete', 'addelete') }}
+  {{ Form::hidden('ad_id', '', array('id' => 'ad_id')) }}
 {{ Form::close() }}
 
 <script type="text/javascript">
-var submitForm = function(formName){
+var submitForm = function(formName, adId) {
+  document.getElementById("ad_id").value = adId;
   document.getElementById(formName).submit();
 }
 

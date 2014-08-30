@@ -215,13 +215,27 @@ class HomeController extends BaseController {
 	|--------------------------------------------------------------------------
 	|
 	*/
-	public function adedit()
-	{
+	public function adedit() {
+		$ad = Ad::find($_POST['ad_id']);
+
+		$adsModel = new Ad;
+		$ad['tags'] =  $adsModel->getTagsByAdId($ad['id']);
+
+		return View::make('editad', array('ad' => $ad));
+	}
+
+	public function saveadedit() {
 		return $this->home();
 	}
 
-	public function addelete()
-	{
+	/*
+	|--------------------------------------------------------------------------
+	| Home controller
+	| 
+	|--------------------------------------------------------------------------
+	|
+	*/
+	public function addelete() {
 		return $this->home();
 	}
 

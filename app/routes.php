@@ -22,7 +22,8 @@ Route::post('/settings', 'HomeController@settings');
 Route::post('/commitcv', 'HomeController@commitcv');
 Route::post('/myads', 'HomeController@myads');
 Route::post('/adedit', 'HomeController@adedit');
-ROute::post('/addelete', 'HomeController@addelete');
+Route::post('/addelete', 'HomeController@addelete');
+Route::post('/saveadedit', 'HomeController@saveadedit');
 
 // TODO: get methodes in case user try to post link (get method)
 // TODO: instead get link throught application
