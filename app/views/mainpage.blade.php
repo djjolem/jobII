@@ -110,11 +110,10 @@
 
                             <div class="modal-footer">
                             {{ Form::button('Cancel', 
-                                array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
+                              array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
                             }}
-                            {{ Form::submit('Submit Application', 
-                                array('class' => 'btn btn-primary'))
-                            }}
+                            {{ Form::button('Matching..', array('class' => 'btn btn-primary')) }}
+                            {{ Form::submit('Apply', array('class' => 'btn btn-primary')) }}
                             </div>
                           </div>
                         </div>
