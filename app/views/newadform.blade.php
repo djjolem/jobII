@@ -101,17 +101,4 @@
 		$('#deadline').datepicker();
 	});
 	</script>
-
-	<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
-	<script type="text/javascript">
-		tinyMCE.init({
-			theme : "advanced",
-			mode : "textareas",
-			plugins : "fullpage",
-			theme_advanced_buttons3_add : "fullpage"
-		});
-	</script>
-
-
-</form>
 @stop
