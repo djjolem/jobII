@@ -56,4 +56,10 @@
 	<div class="col-xs-1">&nbsp;</div>
 </div>
 
+<script src="js/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript">
+	CKEDITOR.replace('ad_text');
+</script>
+
 @stop

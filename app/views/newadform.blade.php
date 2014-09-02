@@ -46,7 +46,7 @@
 
 			{{ Form::label('ad_text', 'Ad text') }}
 			{{ Form::textarea('ad_text', null, 
-					array('class' => 'form-control', 'placeholder' => 'Text of ad', 'rows' => '10' )) 
+					array('class' => 'form-control', 'placeholder' => 'Text of ad', 'rows' => '10', 'cols' => '80' )) 
 			}}
 			<div> &nbsp; </div>
 
@@ -101,4 +101,11 @@
 		$('#deadline').datepicker();
 	});
 	</script>
+
+	<script src="js/ckeditor/ckeditor.js"></script>
+
+	<script type="text/javascript">
+		CKEDITOR.replace('ad_text');
+	</script>
+
 @stop
