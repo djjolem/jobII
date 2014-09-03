@@ -41,7 +41,7 @@
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
                         href="#collapse_{{ $ad['id'] }}">
-                    &nbsp; {{ $ad['short'] }}
+                    <strong>{{ $ad['short'] }}</strong>
                   </p>
 
                   <div id="collapse_{{ $ad['id'] }}" 
