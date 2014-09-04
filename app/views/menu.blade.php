@@ -11,42 +11,42 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    {{ HTML::link('#', 'jobIT', array('class' => 'navbar-brand')) }}
+    {{ HTML::link('#', Lang::get('lcl.productName'), array('class' => 'navbar-brand')) }}
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li>{{ HTML::link('/', 'List Ads', array('class' => 'link-bold')) }}</li>
+      <li>{{ HTML::link('/', Lang::get('lcl.ads.list'), array('class' => 'link-bold')) }}</li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li>{{ HTML::link('/newad', 'New Ad', array('class' => 'link-bold')) }}</li>
+      <li>{{ HTML::link('/newad', Lang::get('lcl.ads.new'), array('class' => 'link-bold')) }}</li>
 
         @if(Auth::check())
           <li class="dropdown">
           <a data-toggle="dropdown"> 
             {{ Auth::user()->username }}
             &nbsp;
-            {{ HTML::image('http://placehold.it/32x32', 'User', array('class' => 'pull-right img-responsive img-circle')) }}
+            {{ HTML::image('http://placehold.it/32x32', Lang::get('user'), array('class' => 'pull-right img-responsive img-circle')) }}
           </a>
           
           <ul class="dropdown-menu"  data-no-collapse="true">
             <li>
-              {{ HTML::link('#', 'Settings', array('onclick' => 'submitForm("user_settings")')) }}
+              {{ HTML::link('#', Lang::get('lcl.settings'), array('onclick' => 'submitForm("user_settings")')) }}
             </li>
             <li>
-              {{ HTML::link('#', 'My Ads', array('onclick' => 'submitForm("my_ads")')) }}
+              {{ HTML::link('#', Lang::get('lcl.myAds'), array('onclick' => 'submitForm("my_ads")')) }}
             </li>
             <li class="divider"></li>
             <li>
-              {{ HTML::link('#', 'Sign out', array('onclick' => 'submitForm("signinup")')) }}
+              {{ HTML::link('#', Lang::get('lcl.signout'), array('onclick' => 'submitForm("signinup")')) }}
             </li>
           </ul>  
         </li>
         @else
           <li class="dropdown">
-            {{ HTML::link('#', 'Sign in / Sign up', array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
+            {{ HTML::link('#', Lang::get('lcl.signinSignup'), array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
           </li>
         @endif
     </ul>
@@ -68,10 +68,18 @@
       <br>
       <div class="bs-example bs-example-tabs">
         <ul id="myTab" class="nav nav-tabs">
-          <li class="">{{ HTML::link('#signin', 'Sign In', array('data-toggle' => 'tab')) }}</li>
-          <li class="">{{ HTML::link('#pass', 'Forgot password', array('data-toggle' => 'tab')) }}</li> 
-          <li class="">{{ HTML::link('#signup', 'Sign up', array('data-toggle' => 'tab')) }}</li> 
-          <li class="">{{ HTML::link('#why', 'Why?', array('data-toggle' => 'tab')) }}</li> 
+          <li class="">
+            {{ HTML::link('#signin', Lang::get('lcl.signin'), array('data-toggle' => 'tab')) }}
+          </li>
+          <li class="">
+            {{ HTML::link('#pass', Lang::get('lcl.forgotPass'), array('data-toggle' => 'tab')) }}
+          </li> 
+          <li class="">
+            {{ HTML::link('#signup', Lang::get('lcl.signup'), array('data-toggle' => 'tab')) }}
+          </li> 
+          <li class="">
+            {{ HTML::link('#why', Lang::get('lcl.why?'), array('data-toggle' => 'tab')) }}
+          </li>
         </ul>
       </div>
 
