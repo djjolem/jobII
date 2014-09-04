@@ -92,18 +92,18 @@
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'sign_in', 'id' => 'sign_in', 'class' => 'form-horizontal', 'role' => 'form')) }}
               <fieldset>
                 <div class="control-group">
-                  {{ Form::label('username', 'Alias', array('calss' => 'control-label')) }}
+                  {{ Form::label('username', Lang::get('lcl.alias'), array('calss' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::text('username', null, array('class' => 'form-control input-medium', 'placeholder' => 'Username or email', 'required' => '')) }}
+                    {{ Form::text('username', null, array('class' => 'form-control input-medium', 'placeholder' =>  Lang::get('lcl.placeholder.usernameEmail'), 'required' => '')) }}
                   </div>
                 </div>
                 <!-- Password input-->
                 <div class="control-group">
-                {{ Form::label('password', 'Password', array('class' => 'control-label')) }}
+                {{ Form::label('password', Lang::get('lcl.password'), array('class' => 'control-label')) }}
                   <div class="controls">
                     {{ Form::password('password', array(
                         'class' => 'form-control input-medium', 
-                        'placeholder' => '*********', 'required' => ''
+                        'placeholder' => Lang::get('lcl.placeholder.passwordHidden'), 'required' => ''
                       )) 
                     }}
                   </div>
@@ -113,14 +113,14 @@
                 <div class="control-group">
                   <div class="controls">
                     {{ Form::checkbox('rememberme0', null, array('value' => 'Remember me')) }}
-                    {{ Form::label('rememberme0', 'Remember me', array('class' => 'checkbox inline')) }}
+                    {{ Form::label('rememberme0', Lang::get('lcl.rememberMe'), array('class' => 'checkbox inline')) }}
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="control-group">
                   <div class="controls">
                     <div class="">&nbsp;</div>
-                    {{ Form::button('Sign In', 
+                    {{ Form::button(Lang::get('lcl.signin'),
                         array('class' => 'btn btn-success', 'name' => 'signin', 'id' => 'signin', 'value' => 'signin', 'type' => '')) 
                     }}
                   </div>
@@ -135,36 +135,43 @@
             {{ Form::open(array('url' => 'signinup', 'method' => 'POST', 'name' => 'new_user', 'id' => 'new_user', 'class' => 'form-horizontal', 'role' => 'form')) }}        
               <fieldset>
                 <div class="control-group">
-                  {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
+                  {{ Form::label('email', Lang::get('lcl.email'), array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::email('email', null, array('class' => 'form-control input-large', 'placeholder' => 'Email', 'required' => '')) }}
+                    {{ Form::email('email', null, array('class' => 'form-control input-large', 
+                      'placeholder' => Lang::get('lcl.placeholder.email'), 'required' => '')) 
+                    }}
                   </div>
                 </div>
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('username', 'Alias', array('class' => 'control-label')) }}
+                  {{ Form::label('username', Lang::get('lcl.alias'), array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::text('username', null, array('class' => 'form-control input-large', 'placeholder' => 'Username', 'required' => '')) }}
+                    {{ Form::text('username', null, array('class' => 'form-control input-large', 
+                      'placeholder' => Lang::get('lcl.placeholder.alias'), 'required' => '')) 
+                    }}
                   </div>
                 </div>
                 
                 <!-- Password input-->
                 <div class="control-group">
-                  {{ Form::label('password', 'Password', array('class' => 'control-label')) }}
+                  {{ Form::label('password', Lang::get('lcl.password'), array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::password('password', array('class' => 'form-control input-large', 'placeholder' => '**********', 'required' => '')) }}
-                      <small><em>1-8 Characters</em></small>
+                    {{ Form::password('password', array('class' => 'form-control input-large', 
+                      'placeholder' => Lang::get('lcl.placeholder.passwordHidden'), 'required' => '')) 
+                    }}
+                      <small><em>{{ Lang::get('lcl.placeholder.passwordComment') }}</em></small>
                   </div>
                 </div>
                 
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('password_confirmation', 'Confirm password', 
+                  {{ Form::label('password_confirmation', Lang::get('lcl.passwordConfirm'), 
                       array('class' => 'control-label')) 
                   }}
                   <div class="controls">
-                    {{ Form::password('password_confirmation', array('class' => 'form-control input-large', 'placeholder' => '*********', 'required' => '' )) }}
+                    {{ Form::password('password_confirmation', array('class' => 'form-control input-large', 'placeholder' => Lang::get('lcl.placeholder.passwordHidden'), 'required' => '' )) 
+                    }}
                   </div>
                 </div>
                     
@@ -172,7 +179,7 @@
                 <div class="control-group">
                   <div class="">&nbsp;</div>
                   <div class="controls">
-                    {{ Form::button ('Sign Up', 
+                    {{ Form::button (Lang::get('lcl.signup'), 
                       array('class' => 'btn btn-success', 'id' => 'signup', 'name' => 'signup', 'value' => 'signup', 'type' => '')) 
                     }}
                   </div>
@@ -186,21 +193,25 @@
               <fieldset>
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('email', 'Email', array('class' => 'control-label')) }}
+                  {{ Form::label('email', Lang::get('lcl.email'), array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::email('email', null, array('class' => 'form-control input-large', 'placeholder' => 'Email', 'required' => '')) }}
+                    {{ Form::email('email', null, array('class' => 'form-control input-large', 
+                      'placeholder' => Lang::get('lcl.placeholder.email'), 'required' => '')) 
+                    }}
                   </div>
                 </div>
 
                 <div class="control-group">
-                  {{ Form::label(null, 'Or', array('class' => 'control-label')) }}
+                  {{ Form::label(null, Lang::get('lcl.or'), array('class' => 'control-label')) }}
                 </div>
 
                 <!-- Text input-->
                 <div class="control-group">
-                  {{ Form::label('alias', 'Alias', array('class' => 'control-label')) }}
+                  {{ Form::label('alias', Lang::get('lcl.alias'), array('class' => 'control-label')) }}
                   <div class="controls">
-                    {{ Form::text('alias', null, array('class' => 'form-control input-large', 'placeholder' => 'Alias', 'required' => '')) }}
+                    {{ Form::text('alias', null, array('class' => 'form-control input-large', 
+                      'placeholder' => Lang::get('lcl.placeholder.alias'), 'required' => '')) 
+                    }}
                   </div>
                 </div>
 
@@ -208,7 +219,9 @@
                 <div class="control-group">
                   <div class="">&nbsp;</div>
                   <div class="controls">
-                    {{ Form::button('Submit', array('class' => 'btn btn-success', 'name' => 'signup', 'id' => 'signup', 'value' => 'signup', 'type' => '')) }}
+                    {{ Form::button(Lang::get('submit'),
+                      array('class' => 'btn btn-success', 'name' => 'signup', 'id' => 'signup', 'value' => 'signup', 'type' => '')) 
+                    }}
                   </div>
                 </div>
               </fieldset>
@@ -216,8 +229,7 @@
           </div>
 
           <div class="tab-pane fade in" id="why">
-            <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-            <p></p><br> Please contact us at {{ HTML::link('mailto:suport@jobit.com', 'email') }} for any other inquiries.</p>
+            {{ Lang::get('lcl.longText.explainWhy') }}
           </div>
 
         </div>
@@ -225,7 +237,7 @@
 
       <div class="modal-footer">
         <center>
-          {{ Form::button('Close', 
+          {{ Form::button(Lang::get('lcl.close'),
             array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
           }}
         </center>
