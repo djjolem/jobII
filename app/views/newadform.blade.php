@@ -9,8 +9,7 @@
 
 			@if (!Auth::check())
 				<div class="well">
-					<p>Shoul I create an account?</p>
-					<p>Button New account</p>
+					{{ Lang::get('lcl.longText.shoulCreateAccount') }}
 				</div>
 			@endif
 			
@@ -28,29 +27,31 @@
 			<h2>Add a new ad</h2>
 			<div> &nbsp; </div>
 
-			{{ Form::label('company', 'Company') }}
+			{{ Form::label('company', Lang::get('lcl.company')) }}
 			{{ Form::select('company', $companies, null, array('class' => 'form-control')) }}
 			<div> &nbsp; </div>
 
-			{{ Form::label('ad_title', 'Title') }}
+			{{ Form::label('ad_title', Lang::get('lcl.ads.title')) }}
 			{{ Form::text('ad_title', null, 
-					array('class' => 'form-control', 'placeholder' => 'Ad title')) 
+					array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.adTitle'))) 
 			}}
 			<div> &nbsp; </div>
 
-			{{ Form::label('ad_description', 'Short text') }}
+			{{ Form::label('ad_description', Lang::get('lcl.shortText')) }}
 			{{ Form::textarea('ad_description', null, 
-					array('class' => 'form-control', 'placeholder' => 'Short description', 'rows' => '3'))
+					array('class' => 'form-control', 
+						'placeholder' => Lang::get('lcl.placeholder.shortText'), 'rows' => '3'))
 			}}
 			<div> &nbsp; </div>
 
-			{{ Form::label('ad_text', 'Ad text') }}
+			{{ Form::label('ad_text', Lang::get('lcl.ads.text')) }}
 			{{ Form::textarea('ad_text', null, 
-					array('class' => 'form-control', 'placeholder' => 'Text of ad', 'rows' => '10', 'cols' => '80' )) 
+					array('class' => 'form-control', 
+						'placeholder' => Lang::get('lcl.placeholder.adText'), 'rows' => '10', 'cols' => '80')) 
 			}}
 			<div> &nbsp; </div>
 
-			{{ Form::label('cb_tag[]', 'Tags') }}
+			{{ Form::label('cb_tag[]', Lang::get('lcl.tags')) }}
 			<br />
 			<span id="tags_groupde">
 				@foreach ($tags as $tag)
@@ -60,7 +61,7 @@
 			</span>
 			<div> &nbsp; </div>
 
-			{{ Form::label('deadline', 'Deadline', array('class' => 'control-lablel')) }}
+			{{ Form::label('deadline', Lang::get('lcl.deadline'), array('class' => 'control-lablel')) }}
 			<div class="well form-group">
 				<div class="input-group date">
 					{{ Form::date('deadline', null, 
@@ -76,13 +77,13 @@
 			<div>
 				{{ Form::label('location', 'Location', array('class' => 'control-lablel')) }}
 				{{ Form::text('location', null, 
-						array('class' => 'form-control', 'placeholder' => 'Location')) 
+						array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.location'))) 
 				}}
 			</div>
 			<div> &nbsp; </div>
 
-			{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-			{{ Form::reset('Clear', array('class' => 'btn btn-info')) }}
+			{{ Form::submit(Lang::get('lcl.save'), array('class' => 'btn btn-primary')) }}
+			{{ Form::reset(Lang::get('lcl.clear'), array('class' => 'btn btn-info')) }}
 
 			{{ Form::close() }}
 		</div>
