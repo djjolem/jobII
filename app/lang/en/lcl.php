@@ -16,6 +16,7 @@ return array(
 		 'passwordComment' => '1-8 Characters',
 		 'email' => 'Email',
 		 'alias' =>  'Username',
+			'additional' => 'Additional',
 	),
 
 	'signup' =>  'Sign up',
@@ -38,9 +39,22 @@ return array(
 
 	'or' => 'Or',
 
-	'submit' => 'Submit',
+	'submit' => 'Submit', // action
+	'close' => 'Close', // action
 
-	'close' => 'Close',
+	'edit..' => 'Edit..', // action
+	'delete..' => 'Delete..', // action
+	'apply..' => 'Apply..', // action
+	'apply' => 'Apply',
+	'cancel' => 'Cancel',
+	'matching..' => 'Matching..',
+
+	'adDesc' => 'Ad description',
+	'fileInput' => 'File input',
+
+	'additional' => 'Additional',
+
+	'aboutCompany' => 'About Company',
 
 	'longText' => array( 
 		'explainWhy' => 

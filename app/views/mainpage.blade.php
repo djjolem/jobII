@@ -55,11 +55,18 @@
                       <div>
                         
                         @if (Auth::check() && Auth::user()->id == $ad['fk_user'])
-                          {{ Form::button('Edit..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("adedit", ' . $ad['id'] . ')')) }}
-                          {{ Form::button('Delete..', array('class' => 'btn btn-primary', 'onclick' => 'submitForm("addelete", ' . $ad['id'] . ')' ))  }}
+                          {{ Form::button(Lang::get('lcl.edit..'), 
+                              array('class' => 'btn btn-primary', 
+                                'onclick' => 'submitForm("adedit", ' . $ad['id'] . ')')) 
+                          }}
+                          {{ Form::button(Lang::get('delete..'), 
+                            array('class' => 'btn btn-primary', 
+                              'onclick' => 'submitForm("addelete", ' . $ad['id'] . ')' ))  
+                          }}
                         @else 
-                          {{ Form::button('Apply', 
-                              array('class' => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
+                          {{ Form::button(Lang::get('lcl.apply..'),
+                              array('class' => 'btn btn-primary pull-right', 
+                                'data-toggle' => 'modal', 'data-target' => '#myModal_' . $ad['id'])) 
                           }}
                         @endif
                         &nbsp;
@@ -75,6 +82,7 @@
                         {{ Form::hidden('user_id', '0') }}
                       @endif
 
+                      {{-- Modal: Apply for job --}}
                       {{ Form::hidden('ad_id', $ad['id']) }}
                       <div class="modal fade" id="myModal_{{ $ad['id'] }}" 
                           name="myModal_{{ $ad['id'] }}" tabindex="-1" 
@@ -91,29 +99,32 @@
                             
                             <div class="modal-body">
                               <div class="form-group">
-                                {{ Form::label('shortdesc', 'Ad description', array('calss' => '')) }}
+                                {{ Form::label('shortdesc', Lang::get('lcl.adDesc'), array('calss' => '')) }}
                                 <p id='shortdesc' class="help-block">
                                   {{ $ad['short'] }}
                                   <br>
                                 </p>
 
-                                {{ Form::label('cvFile', 'File input', array('class' => '', )) }}
+                                {{ Form::label('cvFile', Lang::get('lcl.fileInput'), array('class' => '', )) }}
                                 {{ Form::file('cvFile', array('class' => 'btn btn-default', 'id' => 'cvFile'))
                                 }}
 
                                 <br />
 
-                                {{ Form::label('message', 'Additional') }}
-                                {{ Form::textarea('message', null, array('class' => 'form-control input-large', 'placeholder' => 'Additional', 'rows' => '3')) }}
+                                {{ Form::label('message', Lang::get('lcl.additional')) }}
+                                {{ Form::textarea('message', null, 
+                                  array('class' => 'form-control input-large', 
+                                    'placeholder' => Lang::get('lcl.placeholder.additional'), 'rows' => '3')) 
+                                }}
                               </div>
                             </div>
 
                             <div class="modal-footer">
-                            {{ Form::button('Cancel', 
+                            {{ Form::button(Lang::get('lcl.cancel'),
                               array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
                             }}
-                            {{ Form::button('Matching..', array('class' => 'btn btn-primary')) }}
-                            {{ Form::submit('Apply', array('class' => 'btn btn-primary')) }}
+                            {{ Form::button(Lang::get('lcl.matching..'), array('class' => 'btn btn-primary')) }}
+                            {{ Form::submit(Lang::get('lcl.apply'), array('class' => 'btn btn-primary')) }}
                             </div>
                           </div>
                         </div>
@@ -132,7 +143,7 @@
           <img src="http://placehold.it/300x200" alt="Logo"
             class="pull-right img-responsive thumb margin10 img-thumbnail" />
 
-          {{ Form::button('About Company', array('class' => 'btn btn-default')) }}
+          {{ Form::button(Lang::get('lcl.aboutCompany'), array('class' => 'btn btn-default')) }}
         </span>
       </div>
       <div class="row">
