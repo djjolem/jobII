@@ -59,7 +59,7 @@
                               array('class' => 'btn btn-primary', 
                                 'onclick' => 'submitForm("adedit", ' . $ad['id'] . ')')) 
                           }}
-                          {{ Form::button(Lang::get('delete..'), 
+                          {{ Form::button(Lang::get('lcl.delete..'), 
                             array('class' => 'btn btn-primary', 
                               'onclick' => 'submitForm("addelete", ' . $ad['id'] . ')' ))  
                           }}
