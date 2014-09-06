@@ -33,14 +33,14 @@
           
           <ul class="dropdown-menu"  data-no-collapse="true">
             <li>
-              {{ HTML::link('#', Lang::get('lcl.settings'), array('onclick' => 'submitForm("user_settings")')) }}
+              {{ HTML::link('#', Lang::get('lcl.settings'), array('onclick' => 'submitMenuForm("user_settings")')) }}
             </li>
             <li>
-              {{ HTML::link('#', Lang::get('lcl.myAds'), array('onclick' => 'submitForm("my_ads")')) }}
+              {{ HTML::link('#', Lang::get('lcl.myAds'), array('onclick' => 'submitMenuForm("my_ads")')) }}
             </li>
             <li class="divider"></li>
             <li>
-              {{ HTML::link('#', Lang::get('lcl.signout'), array('onclick' => 'submitForm("signinup")')) }}
+              {{ HTML::link('#', Lang::get('lcl.signout'), array('onclick' => 'submitMenuForm("signinup")')) }}
             </li>
           </ul>  
         </li>
@@ -272,7 +272,7 @@
 {{ Form::close() }}
 
 <script type="text/javascript">
-var submitForm = function(formName){
+var submitMenuForm = function(formName){
   document.getElementById(formName).submit();
 }
 </script>

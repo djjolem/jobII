@@ -188,19 +188,29 @@
 {{ Form::open(array('url' => 'adedit', 'method' => 'POST', 'name' => 'adedit', 'id' => 'adedit', 
     'class' => 'form', 'role' => 'form')) }}
   {{ Form::hidden('adedit', 'adedit') }}
-  {{ Form::hidden('ad_id', '', array('id' => 'ad_id')) }}
+  {{ Form::hidden('edit_ad_id', '', array('id' => 'edit_ad_id')) }}
 {{ Form::close() }}
 
 {{ Form::open(array('url' => 'addelete', 'method' => 'POST', 'name' => 'addelete', 'id' => 'addelete', 
     'class' => 'form', 'role' => 'form')) }}
   {{ Form::hidden('addelete', 'addelete') }}
-  {{ Form::hidden('ad_id', '', array('id' => 'ad_id')) }}
+  {{ Form::hidden('delete_ad_id', '', array('id' => 'delete_ad_id')) }}
 {{ Form::close() }}
 
 <script type="text/javascript">
 var submitForm = function(formName, adId) {
-  document.getElementById("ad_id").value = adId;
-  document.getElementById(formName).submit();
+  if (formName == "adedit") {
+    document.getElementById("edit_ad_id").value = adId;
+    document.getElementById(formName).submit();
+  } else if (formName == 'addelete') {
+    var ans = confirm('{{ Lang::get('lcl.deleteConfirm') }}');
+    if (ans == true) {
+      document.getElementById("delete_ad_id").value = adId;
+      document.getElementById(formName).submit();
+    }
+  } 
+
+  return false;
 }
 
 </script>

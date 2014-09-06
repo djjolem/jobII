@@ -19,7 +19,6 @@ class Ad extends Eloquent {
 	}
 
 	public function saveAd() {
-
 		// default value for user id is 0
 		$userId = 0;
 
@@ -49,6 +48,13 @@ class Ad extends Eloquent {
 		// TODO: insert Tags 
 
 		return array('msg' => array('New ad saved')); 
+	}
+
+	public function deleteAd($adId) {
+		$ad = Ad::find($adId);
+		if ($ad != null) {
+			$ad->delete();
+		}
 	}
 
 }

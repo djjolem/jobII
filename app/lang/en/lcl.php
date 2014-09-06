@@ -67,6 +67,7 @@ return array(
 	'tags' => 'Tags',
 	'deadline' => 'Deadline',
 
+	'deleteConfirm' => 'Do you want to delete ad?',
 
 	'longText' => array( 
 		'explainWhy' => 

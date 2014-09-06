@@ -236,7 +236,11 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function addelete() {
-		return $this->home();
+		$adsModel = new Ad;
+		$adsModel->deleteAd($_POST['delete_ad_id']);
+
+		$msgErr['msg'] = array('Successfully deleted job ad.');
+		return $this->home($msgErr);
 	}
 
 }
