@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'productName' => 'jobIT',
+	'productName' => 'JobIT',
 
 	'user' => 'User',
 

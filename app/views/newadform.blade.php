@@ -55,16 +55,18 @@
 					'placeholder' => Lang::get('lcl.placeholder.adText'), 'rows' => '10', 'cols' => '80')) 
 			}}
 			<div> &nbsp; </div>
-
-			{{ Form::label('cb_tag[]', Lang::get('lcl.tags')) }}
-			<br />
-			<span id="tags_groupde">
-				@foreach ($tags as $tag)
-					{{ Form::checkbox('cb_tag[]', $tag['name']) }}
-					{{ Form::label('', $tag['name']) }}
-				@endforeach
-			</span>
-			<div> &nbsp; </div>
+			
+			@if(false)
+				{{ Form::label('cb_tag[]', Lang::get('lcl.tags')) }}
+				<br />
+				<span id="tags_groupde">
+					@foreach ($tags as $tag)
+						{{ Form::checkbox('cb_tag[]', $tag['name']) }}
+						{{ Form::label('', $tag['name']) }}
+					@endforeach
+				</span>
+				<div> &nbsp; </div>
+			@endif
 
 			{{ Form::label('deadline', Lang::get('lcl.deadline'), array('class' => 'control-lablel')) }}
 			<div class="well form-group">
