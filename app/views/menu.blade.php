@@ -45,9 +45,11 @@
           </ul>  
         </li>
         @else
-          <li class="dropdown">
-            {{ HTML::link('#', Lang::get('lcl.signinSignup'), array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
-          </li>
+          @if (isset($userEnable) && $userEnable)
+            <li class="dropdown">
+              {{ HTML::link('#', Lang::get('lcl.signinSignup'), array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
+            </li>
+          @endif
         @endif
     </ul>
   </div><!-- /.navbar-collapse -->

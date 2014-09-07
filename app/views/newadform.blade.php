@@ -1,5 +1,4 @@
 @section('content')
-
 <div class="container center-block">
 
 	<div class="container center-block row">
@@ -7,7 +6,7 @@
 
 		<div class="col-xs-10">
 
-			@if (!Auth::check())
+			@if (!Auth::check() && isset($userEnabled) && $userEnabled)
 				<div class="well">
 					{{ Lang::get('lcl.longText.shoulCreateAccount') }}
 				</div>
