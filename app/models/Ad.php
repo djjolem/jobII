@@ -27,7 +27,26 @@ class Ad extends Eloquent {
 		if (Auth::user() != null) {
 			$userId = Auth::user()->id;
 		}
-		$companyId = $_POST['company']; 
+
+		# Default company: Unknown company 
+		$companyId = 0; 
+		if (isset($_POST['company_id'])) {
+			$companyId = $_POST['company_id']; 
+		}
+
+		$companyName = ''; 
+		if (isset($_POST['company_name'])) {
+			$companyName = $_POST['company_name'];
+
+			$cmpModel = new Company;
+
+			$company = $cmpModel->findIfExists($companyName);
+			if ($companyId == 0) {
+				$companyId = $cmpModel->addNewCompany($companyName);
+			}
+		}
+
+
 		$adTitle = $_POST['ad_title'];
 		$adDesc = $_POST['ad_description'];
 		$adText = $_POST['ad_text'];
