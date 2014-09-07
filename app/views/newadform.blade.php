@@ -28,26 +28,32 @@
 			<div> &nbsp; </div>
 
 			{{ Form::label('company', Lang::get('lcl.company')) }}
-			{{ Form::select('company', $companies, null, array('class' => 'form-control')) }}
+			@if ($companies)
+				{{ Form::select('company', $companies, null, array('class' => 'form-control')) }}
+			@else
+				{{ Form::text('company_name', null, 
+					array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.companyName'))) 
+				}}
+			@endif
 			<div> &nbsp; </div>
 
 			{{ Form::label('ad_title', Lang::get('lcl.ads.title')) }}
 			{{ Form::text('ad_title', null, 
-					array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.adTitle'))) 
+				array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.adTitle'))) 
 			}}
 			<div> &nbsp; </div>
 
 			{{ Form::label('ad_description', Lang::get('lcl.shortText')) }}
 			{{ Form::textarea('ad_description', null, 
-					array('class' => 'form-control', 
-						'placeholder' => Lang::get('lcl.placeholder.shortText'), 'rows' => '3'))
+				array('class' => 'form-control', 
+					'placeholder' => Lang::get('lcl.placeholder.shortText'), 'rows' => '3'))
 			}}
 			<div> &nbsp; </div>
 
 			{{ Form::label('ad_text', Lang::get('lcl.ads.text')) }}
 			{{ Form::textarea('ad_text', null, 
-					array('class' => 'form-control', 
-						'placeholder' => Lang::get('lcl.placeholder.adText'), 'rows' => '10', 'cols' => '80')) 
+				array('class' => 'form-control', 
+					'placeholder' => Lang::get('lcl.placeholder.adText'), 'rows' => '10', 'cols' => '80')) 
 			}}
 			<div> &nbsp; </div>
 

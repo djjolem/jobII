@@ -23,6 +23,7 @@ return array(
 		'shortText' => 'Short description',
 		'adText' => 'Text of ad',
 		'location' => 'Location',
+		'companyName' => 'Company Name',
 	),
 
 	'signup' =>  'Sign up',

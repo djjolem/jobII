@@ -16,8 +16,7 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-	public function showWelcome()
-	{
+	public function showWelcome() {
 		return View::make('hello');
 	}
 
@@ -64,16 +63,16 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function newad() {
-		$tagsModel = new Tag;
+		$companies = null; 
+		if (Auth::check()) {
+			$userId = 0; 
+
+			// TODO: get companies, and their IDs
+			// card#98
+			$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
+		}
 		
-		// if userId == 0 then==> $userId = $USER_ID_DEFAULT;
-		$userId = 0; 
-
-		// TODO: get companies, and their IDs
-		$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
-
-		// TODO: Fetch tags from database
-		$tags = array(1 => 'HTML', 2 => 'CSS', 3 => 'PHP', 4 => 'Laravel');
+		$tagsModel = new Tag;
 		$tags = $tagsModel->getAllTags();
 		
 		$data = array(
