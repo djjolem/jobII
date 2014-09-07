@@ -63,10 +63,12 @@ class HomeController extends BaseController {
 	|
 	*/
 	public function newad() {
+		$userId = 0; 
+
 		$companies = null; 
 		if (Auth::check()) {
-			$userId = 0; 
-
+			$userId = Auth::user()->id;
+			
 			// TODO: get companies, and their IDs
 			// card#98
 			$companies = array(1 => 'Company 1', 2 => 'Company 2', 3 => 'Company 3');
