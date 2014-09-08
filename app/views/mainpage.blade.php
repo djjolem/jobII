@@ -41,7 +41,22 @@
                 <div class="accordion-heading">
                   <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
                         href="#collapse_{{ $ad['id'] }}">
-                    <strong>{{ $ad['short'] }}</strong>
+                    <span>
+                      <strong>{{ $ad['short'] }}</strong>
+
+                      <span class="pull-right">
+                        <?php 
+                          $deadline = date('Y-m-d', strtotime($ad['deadline']));
+                          $oneweek  = date('Y-m-d', strtotime("+1 week"));
+                        ?>
+
+                        @if ($oneweek >= $deadline)
+                          <span class='label label-danger'>{{ $deadline }}</span>
+                        @else
+                          <span class='label label-default'>{{ $deadline }}</span>
+                        @endif
+                      </span>
+                    </span>
                   </p>
 
                   <div id="collapse_{{ $ad['id'] }}" 
@@ -123,6 +138,7 @@
                             {{ Form::button(Lang::get('lcl.cancel'),
                               array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
                             }}
+                            {{-- TODO: move back button --}}
                             @if (false)
                               {{ Form::button(Lang::get('lcl.matching..'), 
                                 array('class' => 'btn btn-primary'))
@@ -145,9 +161,7 @@
         </span>
         <span class="col-xs-2">
           <img src="http://placehold.it/300x200" alt="Logo"
-            class="pull-right img-responsive thumb margin10 img-thumbnail" />
-
-          {{ Form::button(Lang::get('lcl.aboutCompany'), array('class' => 'btn btn-default')) }}
+            class="pull-right img-responsive thumb margin10 img-thumbnail" />          
         </span>
       </div>
       <div class="row">
@@ -164,18 +178,7 @@
           @endif
         </div>
         <div class="col-xs-2">
-          <h4>
-            <?php 
-              $deadline = date('Y-m-d', strtotime($ad['deadline']));
-              $oneweek = date('Y-m-d', strtotime("+1 week"));
-            ?>
-
-            @if ($oneweek >= $deadline)
-              <span class='label label-danger'>{{ $deadline }}</span>
-            @else
-              <span class='label label-default'>{{ $deadline }}</span>
-            @endif
-          </h4>
+          {{ Form::button(Lang::get('lcl.aboutCompany'), array('class' => 'btn btn-default')) }}
         </div>
       </div>
       </div>
