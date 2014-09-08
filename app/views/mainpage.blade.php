@@ -123,7 +123,11 @@
                             {{ Form::button(Lang::get('lcl.cancel'),
                               array('class' => 'btn btn-default', 'data-dismiss' => 'modal')) 
                             }}
-                            {{ Form::button(Lang::get('lcl.matching..'), array('class' => 'btn btn-primary')) }}
+                            @if (false)
+                              {{ Form::button(Lang::get('lcl.matching..'), 
+                                array('class' => 'btn btn-primary'))
+                              }}
+                            @endif
                             {{ Form::submit(Lang::get('lcl.apply'), array('class' => 'btn btn-primary')) }}
                             </div>
                           </div>
