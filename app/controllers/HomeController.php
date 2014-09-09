@@ -62,7 +62,7 @@ class HomeController extends BaseController {
 	|--------------------------------------------------------------------------
 	|
 	*/
-	public function newad() {
+	public function newAd() {
 		$userId = 0; 
 
 		$companies = null; 
@@ -83,7 +83,7 @@ class HomeController extends BaseController {
 			'tags' => $tags, 
 		); 
 
-		return View::make('newad', $data);
+		return View::make('newAd', $data);
 	}
 
 /*

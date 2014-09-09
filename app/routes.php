@@ -13,7 +13,7 @@
 
 //
 Route::get('/', 'HomeController@home');
-Route::get('/newad', 'HomeController@newad');
+Route::get('/newAd', 'HomeController@newAd');
 
 Route::post('/savead', 'HomeController@savead');
 Route::post('/signinup', 'HomeController@signinup');

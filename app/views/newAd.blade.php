@@ -1,11 +1,8 @@
 @extends('master')
 
-
 @include('menu')
 
-
-@include('mainPage')
-
+@include('newadform')
 
 @section('foot')
 	{{-- empty: add some content --}}
