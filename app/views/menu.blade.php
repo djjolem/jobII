@@ -23,35 +23,43 @@
     <ul class="nav navbar-nav navbar-right">
       <li>{{ HTML::link('/newAd', Lang::get('lcl.ads.new'), array('class' => 'link-bold')) }}</li>
 
-        @if(Auth::check())
+      @if(Auth::check())
+      <li class="dropdown">
+        <a data-toggle="dropdown"> 
+          {{ Auth::user()->username }}
+          &nbsp;
+          {{ HTML::image('http://placehold.it/32x32', Lang::get('user'), array('class' => 'pull-right img-responsive img-circle')) }}
+        </a>
+        
+        <ul class="dropdown-menu"  data-no-collapse="true">
+          <li>
+            {{ HTML::link('#', Lang::get('lcl.settings'), array('onclick' => 'submitMenuForm("user_settings")')) }}
+          </li>
+          <li>
+            {{ HTML::link('#', Lang::get('lcl.myAds'), array('onclick' => 'submitMenuForm("my_ads")')) }}
+          </li>
+          <li class="divider"></li>
+          <li>
+            {{ HTML::link('#', Lang::get('lcl.signout'), array('onclick' => 'submitMenuForm("signinup")')) }}
+          </li>
+        </ul>  
+      </li>
+      @else
+        @if (isset($userEnable) && $userEnable)
           <li class="dropdown">
-          <a data-toggle="dropdown"> 
-            {{ Auth::user()->username }}
-            &nbsp;
-            {{ HTML::image('http://placehold.it/32x32', Lang::get('user'), array('class' => 'pull-right img-responsive img-circle')) }}
-          </a>
-          
-          <ul class="dropdown-menu"  data-no-collapse="true">
-            <li>
-              {{ HTML::link('#', Lang::get('lcl.settings'), array('onclick' => 'submitMenuForm("user_settings")')) }}
-            </li>
-            <li>
-              {{ HTML::link('#', Lang::get('lcl.myAds'), array('onclick' => 'submitMenuForm("my_ads")')) }}
-            </li>
-            <li class="divider"></li>
-            <li>
-              {{ HTML::link('#', Lang::get('lcl.signout'), array('onclick' => 'submitMenuForm("signinup")')) }}
-            </li>
-          </ul>  
-        </li>
-        @else
-          @if (isset($userEnable) && $userEnable)
-            <li class="dropdown">
-              {{ HTML::link('#', Lang::get('lcl.signinSignup'), array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
-            </li>
-          @endif
+            {{ HTML::link('#', Lang::get('lcl.signinSignup'), array('class' => 'btn btn-default btn-block', 'data-toggle' => 'modal', 'data-target' => '#myModalMenu')) }}
+          </li>
         @endif
+      @endif
+      
+      {{-- language --}}
+      <li>
+        {{ HTML::link('#', Lang::get('ENG'), array('class' => 'btn btn-default btn-block')) }}
+      </li>
     </ul>
+    
+      
+    
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
