@@ -184,7 +184,7 @@ class HomeController extends BaseController {
 		// $validator = Validator::make()...
 
 		if ($file == null) {
-			$msgErr['err'] = array('There is not selected file.');
+			$msgErr['err'] = array(Lang::get('lcal.backendMsg.noSelectedFile'));
 			return $this->home($msgErr);
 		}
 
@@ -194,7 +194,7 @@ class HomeController extends BaseController {
 		$applModel = new Application; 
 		$applModel->saveNewApplication($userId, $adId, $newFilename, $message);
 
-		$msgErr['msg'] = array('Successfully applied for job.');
+		$msgErr['msg'] = array(Lang::get('lcl.backendMsg.succesApply'));
 		return $this->home($msgErr);
 	}
 
@@ -240,7 +240,7 @@ class HomeController extends BaseController {
 		$adsModel = new Ad;
 		$adsModel->deleteAd($_POST['delete_ad_id']);
 
-		$msgErr['msg'] = array('Successfully deleted job ad.');
+		$msgErr['msg'] = array(Lagn::get('lcl.backendMsg.successDelete'));
 		return $this->home($msgErr);
 	}
 

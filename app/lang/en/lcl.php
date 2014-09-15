@@ -70,6 +70,13 @@ return array(
 
 	'deleteConfirm' => 'Do you want to delete ad?',
 
+	'backendMsg' => array(
+		'unknowAction' => 'Unknown action', 
+		'noSelectedFile' =>  'There is not selected file.',
+		'successAplly' =>  'Successfully applied for job.',
+		'successDelete' => 'Successfully deleted job ad.',
+	),
+
 	'longText' => array( 
 		'explainWhy' => 
 				'<p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
