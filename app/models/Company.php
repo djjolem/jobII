@@ -3,9 +3,7 @@
 class Company extends Eloquent {
 
 	public function findIfExists($cmpyName) {
-		# TODO: implement
-
-		dd($_POST);
+			
 		# Use INPUT facade class
 		$cmpyName = $_POST['company_name']; 
 		$cmpy = Company::get();
