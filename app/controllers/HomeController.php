@@ -129,7 +129,7 @@ class HomeController extends BaseController {
 			return $this->home($msgErr);
 		}
 
-		$message = 'Unknown action';
+		$message = Lang::get('lcl.backendMsg.unknowAction');
 		return $this->home($message);
 	}
 
