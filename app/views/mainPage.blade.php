@@ -39,25 +39,27 @@
             <div class="container-fluid">
               <div class="accordion-group">
                 <div class="accordion-heading">
-                  <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
-                        href="#collapse_{{ $ad['id'] }}">
-                    <span>
-                      <strong>{{ $ad['short'] }}</strong>
+                  <h4 class="panel-title">
+                    <p class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" 
+                          href="#collapse_{{ $ad['id'] }}">
+                      <span>
+                        <a class="link-ad-short"><strong>{{ $ad['short'] }}</strong></a>
 
-                      <span class="pull-right">
-                        <?php 
-                          $deadline = date('Y-m-d', strtotime($ad['deadline']));
-                          $oneweek  = date('Y-m-d', strtotime("+1 week"));
-                        ?>
+                        <span class="pull-right">
+                          <?php 
+                            $deadline = date('Y-m-d', strtotime($ad['deadline']));
+                            $oneweek  = date('Y-m-d', strtotime("+1 week"));
+                          ?>
 
-                        @if ($oneweek >= $deadline)
-                          <span class='label label-danger'>{{ $deadline }}</span>
-                        @else
-                          <span class='label label-default'>{{ $deadline }}</span>
-                        @endif
+                          @if ($oneweek >= $deadline)
+                            <span class='label label-danger'>{{ $deadline }}</span>
+                          @else
+                            <span class='label label-default'>{{ $deadline }}</span>
+                          @endif
+                        </span>
                       </span>
-                    </span>
-                  </p>
+                    </p>
+                  </h4>
 
                   <div id="collapse_{{ $ad['id'] }}" 
                       class="accordion-body collapse" style="height: 0px; ">
