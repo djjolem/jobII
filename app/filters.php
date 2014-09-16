@@ -13,6 +13,8 @@
 
 App::before(function($request) {
 	//
+	# TODO: read language from session and set 
+	# 
 	App::setLocale('sr');
 });
 

@@ -53,9 +53,11 @@
       @endif
       
       {{-- language --}}
-      <li>
-        {{ HTML::link('#', Lang::get('ENG'), array('class' => 'btn btn-default btn-block')) }}
-      </li>
+      {{-- TODO: enable language switching 
+        <li>
+          {{ HTML::link('#', Lang::get('ENG'), array('class' => 'btn btn-default btn-block')) }}
+        </li>
+      --}}
     </ul>
     
       

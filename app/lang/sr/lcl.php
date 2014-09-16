@@ -6,7 +6,7 @@ return array(
 	'user' => 'Korisnik',
 
 	'ads' => array(
-		'list' => 'Oglas',
+		'list' => 'Oglasi',
 		'new' => 'Novi oglas',
 		'title' => 'Naslov',
 		'text' => 'Tekst oglasa',
