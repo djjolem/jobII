@@ -42,6 +42,8 @@ return array(
 	
 	'why?' => 'Zašto?',
 
+	'location' => 'Lokacija',
+
 	'email' => 'Imejl',
 
 	'or' => 'Ili',

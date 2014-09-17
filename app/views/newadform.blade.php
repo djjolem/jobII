@@ -82,7 +82,7 @@
 			<div> &nbsp; </div>
 
 			<div>
-				{{ Form::label('location', 'Location', array('class' => 'control-lablel')) }}
+				{{ Form::label('location', Lang::get('lcl.location'), array('class' => 'control-lablel')) }}
 				{{ Form::text('location', null, 
 						array('class' => 'form-control', 'placeholder' => Lang::get('lcl.placeholder.location'))) 
 				}}

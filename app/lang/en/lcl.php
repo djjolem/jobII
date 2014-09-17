@@ -42,6 +42,8 @@ return array(
 	
 	'why?' => 'Why?',
 
+	'location' => 'Location',
+
 	'email' => 'Email',
 
 	'or' => 'Or',
