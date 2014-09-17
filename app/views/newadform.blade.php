@@ -23,7 +23,7 @@
 				) 
 			}}
 
-			<h2>Add a new ad</h2>
+			<h2>{{ Lang::get('lcl.addNewAd') }}</h2>
 			<div> &nbsp; </div>
 
 			{{ Form::label('company', Lang::get('lcl.company')) }}

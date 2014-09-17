@@ -48,6 +48,8 @@ return array(
 
 	'or' => 'Ili',
 
+	'addNewAd' => 'Postavi novi oglas', 
+
 	'submit' => 'Prijavi', // action
 	'close' => 'Zatvori', // action
 	'save' => 'Sačuvaj', //action
@@ -68,7 +70,7 @@ return array(
 
 	'company' => 'Kompanija',
 	'tags' => 'Oznake',
-	'deadline' => 'Deadline',
+	'deadline' => 'Rok za prijavu',
 
 	'deleteConfirm' => 'Da li želite da obrište reklamu?',
 

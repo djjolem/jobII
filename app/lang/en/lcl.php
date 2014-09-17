@@ -48,6 +48,8 @@ return array(
 
 	'or' => 'Or',
 
+	'addNewAd' => 'Add a new ad', 
+
 	'submit' => 'Submit', // action
 	'close' => 'Close', // action
 	'save' => 'Save', //action
